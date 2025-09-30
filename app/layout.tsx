@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Ireland Golf Planner - Ryder Cup 2027 at Adare Manor",
@@ -11,10 +10,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Redirect root to /en
-  if (typeof window === 'undefined') {
-    redirect('/en');
-  }
-
-  return children;
+  return (
+    <html>
+      <body>{children}</body>
+    </html>
+  );
 }
