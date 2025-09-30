@@ -2,6 +2,22 @@ import { Locale, getLocalizedValue } from '@/lib/i18n';
 import { hotels } from '@/data/hotels';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import Image from 'next/image';
+import { generateMetadata as genMeta } from '@/lib/seo';
+
+export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+  const { locale } = params;
+  return genMeta({
+    title: locale === 'en'
+      ? 'Hotels Near Adare Manor Ryder Cup 2027 | Accommodation Guide'
+      : 'Hoteles Cerca de Adare Manor Ryder Cup 2027 | Guía de Alojamiento',
+    description: locale === 'en'
+      ? 'Find hotels near Adare Manor for Ryder Cup 2027. From luxury castle hotels to B&Bs in Adare Village. Book accommodations in Limerick, Shannon & surrounding areas.'
+      : 'Encuentra hoteles cerca de Adare Manor para Ryder Cup 2027. Desde hoteles castillo de lujo hasta B&Bs en Adare Village. Reserva alojamiento en Limerick, Shannon y alrededores.',
+    keywords: ['adare manor hotels', 'ryder cup 2027 accommodation', 'hotels limerick ireland', 'adare village hotels', 'ryder cup lodging'],
+    locale,
+    canonicalUrl: `https://www.adarelimerickgolf.com/${locale}/hotels-near-adare-manor`,
+  });
+}
 
 export default function HotelsPage({ params }: { params: { locale: Locale } }) {
   const { locale } = params;

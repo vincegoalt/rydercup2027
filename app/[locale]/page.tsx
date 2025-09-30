@@ -6,6 +6,22 @@ import HeroBlock from '@/components/blocks/HeroBlock';
 import Link from 'next/link';
 import Image from 'next/image';
 import { generateBookingLink, generateDirectCourseLink } from '@/lib/affiliates';
+import { generateMetadata as genMeta } from '@/lib/seo';
+
+export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+  const { locale } = params;
+  return genMeta({
+    title: locale === 'en'
+      ? 'Ryder Cup 2027 Ireland Golf Guide | Adare Manor Hotels & Courses'
+      : 'Guía Golf Irlanda Ryder Cup 2027 | Hoteles y Campos Adare Manor',
+    description: locale === 'en'
+      ? 'Plan your Ryder Cup 2027 trip to Adare Manor. Find top golf courses, hotels, travel guides for County Limerick Ireland. Book tee times & accommodations now!'
+      : 'Planifica tu viaje Ryder Cup 2027 a Adare Manor. Encuentra campos de golf, hoteles y guías de viaje para el condado de Limerick Irlanda. ¡Reserva ahora!',
+    keywords: ['ryder cup 2027', 'adare manor', 'ireland golf', 'limerick golf courses', 'golf hotels ireland', 'ryder cup travel guide'],
+    locale,
+    canonicalUrl: `https://www.adarelimerickgolf.com/${locale}`,
+  });
+}
 
 export default function HomePage({ params }: { params: { locale: Locale } }) {
   const { locale } = params;

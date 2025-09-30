@@ -1,5 +1,21 @@
 import { Locale } from '@/lib/i18n';
 import HeroBlock from '@/components/blocks/HeroBlock';
+import { generateMetadata as genMeta } from '@/lib/seo';
+
+export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+  const { locale } = params;
+  return genMeta({
+    title: locale === 'en'
+      ? 'Adare Manor Golf Course Guide | Ryder Cup 2027 Venue | Tee Times & Rates'
+      : 'Guía Campo Golf Adare Manor | Sede Ryder Cup 2027 | Horarios y Tarifas',
+    description: locale === 'en'
+      ? 'Play the 2027 Ryder Cup venue. Adare Manor Tom Fazio championship course guide: green fees, tee times, caddie hire, course layout. Book your round in County Limerick.'
+      : 'Juega en la sede de Ryder Cup 2027. Guía del campo de campeonato Tom Fazio de Adare Manor: tarifas, horarios, alquiler de caddie, diseño del campo. Reserva tu ronda en Limerick.',
+    keywords: ['adare manor golf course', 'tom fazio adare', 'ryder cup 2027 venue', 'adare manor tee times', 'limerick golf'],
+    locale,
+    canonicalUrl: `https://www.adarelimerickgolf.com/${locale}/adare-manor-golf-course`,
+  });
+}
 
 export default function AdareManorCoursePage({ params }: { params: { locale: Locale } }) {
   const { locale } = params;

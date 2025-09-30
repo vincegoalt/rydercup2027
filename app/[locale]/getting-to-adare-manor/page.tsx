@@ -1,5 +1,21 @@
 import { Locale } from '@/lib/i18n';
 import HeroBlock from '@/components/blocks/HeroBlock';
+import { generateMetadata as genMeta } from '@/lib/seo';
+
+export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+  const { locale } = params;
+  return genMeta({
+    title: locale === 'en'
+      ? 'Getting to Adare Manor | Shannon & Dublin Airport Transport Guide'
+      : 'Cómo Llegar a Adare Manor | Guía Transporte Shannon y Dublín',
+    description: locale === 'en'
+      ? 'Complete transport guide to Adare Manor for Ryder Cup 2027. Shannon Airport 25min, Dublin 2.5hrs. Car rental, shuttle, taxi options & driving directions to County Limerick.'
+      : 'Guía completa de transporte a Adare Manor para Ryder Cup 2027. Aeropuerto Shannon 25min, Dublín 2.5hrs. Alquiler de coches, shuttle, taxi y direcciones al condado de Limerick.',
+    keywords: ['shannon airport to adare manor', 'getting to adare', 'ireland transport', 'limerick airport', 'ryder cup travel'],
+    locale,
+    canonicalUrl: `https://www.adarelimerickgolf.com/${locale}/getting-to-adare-manor`,
+  });
+}
 
 export default function GettingTherePage({ params }: { params: { locale: Locale } }) {
   const { locale } = params;

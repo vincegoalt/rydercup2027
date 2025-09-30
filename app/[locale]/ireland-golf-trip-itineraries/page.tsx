@@ -1,5 +1,21 @@
 import { Locale } from '@/lib/i18n';
 import HeroBlock from '@/components/blocks/HeroBlock';
+import { generateMetadata as genMeta } from '@/lib/seo';
+
+export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+  const { locale } = params;
+  return genMeta({
+    title: locale === 'en'
+      ? 'Ireland Golf Trip Itineraries with Ryder Cup 2027 | 8-10 Day Routes'
+      : 'Itinerarios Viaje Golf Irlanda con Ryder Cup 2027 | Rutas 8-10 Días',
+    description: locale === 'en'
+      ? 'Perfect golf trip itineraries combining Ryder Cup 2027 with Ireland\'s best courses. Play Ballybunion, Lahinch, Tralee & more. 8-10 day sample routes from Adare Manor.'
+      : 'Itinerarios perfectos de golf combinando Ryder Cup 2027 con los mejores campos de Irlanda. Juega Ballybunion, Lahinch, Tralee y más. Rutas de muestra 8-10 días desde Adare Manor.',
+    keywords: ['ireland golf itinerary', 'ryder cup golf trip', 'ballybunion lahinch tralee', 'ireland golf vacation', 'adare manor golf trip'],
+    locale,
+    canonicalUrl: `https://www.adarelimerickgolf.com/${locale}/ireland-golf-trip-itineraries`,
+  });
+}
 
 export default function ItinerariesPage({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
