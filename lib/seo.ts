@@ -1,0 +1,141 @@
+import { Locale } from './i18n';
+
+export interface SEOProps {
+  title: string;
+  description: string;
+  keywords?: string[];
+  ogImage?: string;
+  canonicalUrl?: string;
+  locale: Locale;
+  alternateLocales?: { locale: Locale; url: string }[];
+}
+
+export function generateMetadata(props: SEOProps) {
+  const { title, description, keywords, ogImage, canonicalUrl, locale, alternateLocales } = props;
+
+  const metadata: any = {
+    title: title,
+    description: description,
+    keywords: keywords?.join(', '),
+    openGraph: {
+      title: title,
+      description: description,
+      images: ogImage ? [{ url: ogImage }] : [],
+      locale: locale === 'en' ? 'en_US' : 'es_ES',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: title,
+      description: description,
+      images: ogImage ? [ogImage] : [],
+    },
+  };
+
+  if (canonicalUrl) {
+    metadata.alternates = {
+      canonical: canonicalUrl,
+    };
+
+    if (alternateLocales && alternateLocales.length > 0) {
+      metadata.alternates.languages = alternateLocales.reduce((acc, alt) => {
+        acc[alt.locale] = alt.url;
+        return acc;
+      }, {} as Record<string, string>);
+    }
+  }
+
+  return metadata;
+}
+
+export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function generateLocalBusinessSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TravelAgency',
+    name: 'Ireland Golf Planner',
+    description: 'Your guide to Ryder Cup 2027 at Adare Manor and golf trips in Ireland',
+    url: 'https://irelandgolfplanner.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'IE',
+    },
+    areaServed: ['Ireland', 'Limerick', 'County Clare', 'County Kerry'],
+  };
+}
+
+export function generateEventSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SportsEvent',
+    name: 'Ryder Cup 2027',
+    description: 'The 2027 Ryder Cup at Adare Manor, County Limerick, Ireland',
+    startDate: '2027-09-17',
+    endDate: '2027-09-19',
+    location: {
+      '@type': 'Place',
+      name: 'Adare Manor',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Adare Manor',
+        addressLocality: 'Adare',
+        addressRegion: 'County Limerick',
+        addressCountry: 'IE',
+      },
+    },
+    organizer: {
+      '@type': 'Organization',
+      name: 'Ryder Cup Europe',
+      url: 'https://www.rydercup.com',
+    },
+  };
+}
+
+export function generateGolfCourseSchema(course: {
+  name: string;
+  description: string;
+  address: string;
+  telephone?: string;
+  url?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'GolfCourse',
+    name: course.name,
+    description: course.description,
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'IE',
+      streetAddress: course.address,
+    },
+    telephone: course.telephone,
+    url: course.url,
+  };
+}
+
+export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
