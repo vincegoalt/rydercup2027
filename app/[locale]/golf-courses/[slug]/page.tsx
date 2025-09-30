@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
-import { generateMetadata as genMeta } from '@/lib/seo';
+import { generateMetadata as genMeta, generateGolfCourseSchema } from '@/lib/seo';
 
 export async function generateStaticParams() {
   const params = [];
@@ -49,8 +49,26 @@ export default function CourseDetailPage({ params }: { params: { locale: Locale;
     notFound();
   }
 
+  const golfCourseSchema = generateGolfCourseSchema({
+    name: course.name,
+    description: getLocalizedValue(course.description, locale),
+    location: course.location,
+    county: course.county,
+    greenFee: course.greenFee,
+    courseType: course.type,
+    designer: course.designer,
+    url: `https://www.adarelimerickgolf.com/${locale}/golf-courses/${slug}`,
+    latitude: course.coordinates.lat,
+    longitude: course.coordinates.lng,
+    imageUrl: course.imageUrl,
+  });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(golfCourseSchema) }}
+      />
       <Breadcrumb
         locale={locale}
         items={[

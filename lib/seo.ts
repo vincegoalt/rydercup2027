@@ -108,23 +108,78 @@ export function generateEventSchema() {
 export function generateGolfCourseSchema(course: {
   name: string;
   description: string;
-  address: string;
-  telephone?: string;
+  location: string;
+  county: string;
+  greenFee?: string;
+  courseType?: string;
+  designer?: string;
   url?: string;
+  latitude?: number;
+  longitude?: number;
+  imageUrl?: string;
 }) {
-  return {
+  const schema: any = {
     '@context': 'https://schema.org',
     '@type': 'GolfCourse',
     name: course.name,
     description: course.description,
     address: {
       '@type': 'PostalAddress',
+      addressLocality: course.location,
+      addressRegion: `County ${course.county}`,
       addressCountry: 'IE',
-      streetAddress: course.address,
     },
-    telephone: course.telephone,
     url: course.url,
   };
+
+  if (course.greenFee) {
+    schema.offers = {
+      '@type': 'Offer',
+      category: 'Green Fee',
+      price: course.greenFee,
+      priceCurrency: 'EUR',
+    };
+  }
+
+  if (course.designer) {
+    schema.additionalProperty = [
+      {
+        '@type': 'PropertyValue',
+        name: 'Course Designer',
+        value: course.designer,
+      },
+    ];
+
+    if (course.courseType) {
+      schema.additionalProperty.push({
+        '@type': 'PropertyValue',
+        name: 'Course Type',
+        value: course.courseType,
+      });
+    }
+  } else if (course.courseType) {
+    schema.additionalProperty = [
+      {
+        '@type': 'PropertyValue',
+        name: 'Course Type',
+        value: course.courseType,
+      },
+    ];
+  }
+
+  if (course.latitude && course.longitude) {
+    schema.geo = {
+      '@type': 'GeoCoordinates',
+      latitude: course.latitude,
+      longitude: course.longitude,
+    };
+  }
+
+  if (course.imageUrl) {
+    schema.image = course.imageUrl;
+  }
+
+  return schema;
 }
 
 export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
