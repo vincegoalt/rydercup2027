@@ -65,8 +65,12 @@ export default function Footer({ locale, translations }: FooterProps) {
           <div>
             <h4 className="font-heading font-semibold mb-4 text-white">{translations.contact}</h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li>{translations.email}: info@placeholder.com</li>
-              <li>{translations.phone}: +353 1 234 5678</li>
+              <li>{translations.email}: info@adarelimerickgolf.com</li>
+              <li>
+                {locale === 'en'
+                  ? 'Information guide for Ryder Cup 2027 visitors'
+                  : 'Guía de información para visitantes de Ryder Cup 2027'}
+              </li>
             </ul>
           </div>
         </div>
