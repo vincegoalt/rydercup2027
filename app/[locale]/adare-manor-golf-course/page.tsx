@@ -33,7 +33,7 @@ export default function AdareManorCoursePage({ params }: { params: { locale: Loc
           { label: locale === 'en' ? 'Designer' : 'Diseñador', value: 'Tom Fazio' },
           { label: locale === 'en' ? 'Type' : 'Tipo', value: 'Championship Parkland' },
           { label: locale === 'en' ? 'Green Fee (2026)' : 'Tarifa (2026)', value: '€550' },
-          { label: locale === 'en' ? 'Caddie Fee' : 'Caddie', value: '€120' },
+          { label: locale === 'en' ? 'Last Updated' : 'Actualizado', value: locale === 'en' ? 'Jan 2025' : 'Ene 2025' },
         ]}
       />
 

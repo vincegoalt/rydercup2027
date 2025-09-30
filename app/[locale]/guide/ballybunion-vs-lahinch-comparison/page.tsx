@@ -61,10 +61,13 @@ export default function BallybunionVsLahinchPage({ params }: { params: { locale:
               ? 'The ultimate comparison of two legendary Irish links courses near Adare Manor'
               : 'La comparación definitiva de dos campos links irlandeses legendarios cerca de Adare Manor'}
           </p>
-          <p className="text-emerald-400 font-semibold">
+          <p className="text-emerald-400 font-semibold mb-2">
             {locale === 'en'
               ? 'Both within 90 minutes of Ryder Cup 2027 venue'
               : 'Ambos a 90 minutos de la sede de la Ryder Cup 2027'}
+          </p>
+          <p className="text-sm text-gray-300">
+            {locale === 'en' ? 'Last Updated: January 2025' : 'Última Actualización: Enero 2025'}
           </p>
         </div>
       </section>

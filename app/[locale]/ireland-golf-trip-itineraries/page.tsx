@@ -38,6 +38,12 @@ export default function ItinerariesPage({ params }: { params: { locale: Locale }
           ? 'Combine the 2027 Ryder Cup with a classic Ireland golf trip. Experience 1-3 days of Ryder Cup competition plus play Ballybunion, Lahinch, Tralee, and more around the southwest coast.'
           : 'Combina la Ryder Cup 2027 con un viaje de golf clásico por Irlanda. Experimenta 1-3 días de competición de Ryder Cup más juega Ballybunion, Lahinch, Tralee y más por la costa suroeste.'}
         backgroundImage="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1600"
+        keyFacts={[
+          {
+            label: locale === 'en' ? 'Last Updated' : 'Actualizado',
+            value: locale === 'en' ? 'Jan 2025' : 'Ene 2025',
+          },
+        ]}
       />
 
       <section className="section-padding bg-white">

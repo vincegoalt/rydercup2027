@@ -56,10 +56,13 @@ export default function IrelandGolfCostPage({ params }: { params: { locale: Loca
               ? 'Complete 2027 budget guide for Ryder Cup week and year-round golf trips'
               : 'Guía de presupuesto completa 2027 para semana de Ryder Cup y viajes de golf todo el año'}
           </p>
-          <p className="text-2xl font-bold text-gold-400">
+          <p className="text-2xl font-bold text-gold-400 mb-2">
             {locale === 'en'
               ? '€2,500 - €8,000+ per person (7 days, 4-5 rounds)'
               : '€2,500 - €8,000+ por persona (7 días, 4-5 rondas)'}
+          </p>
+          <p className="text-sm text-emerald-100">
+            {locale === 'en' ? 'Last Updated: January 2025' : 'Última Actualización: Enero 2025'}
           </p>
         </div>
       </section>

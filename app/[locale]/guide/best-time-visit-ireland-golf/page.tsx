@@ -61,8 +61,8 @@ export default function BestTimeVisitGuidePage({ params }: { params: { locale: L
             value: locale === 'en' ? 'Apr-May, Oct' : 'Abr-May, Oct',
           },
           {
-            label: locale === 'en' ? 'Avg Summer Temp' : 'Temp Verano',
-            value: '18-20°C',
+            label: locale === 'en' ? 'Last Updated' : 'Actualizado',
+            value: locale === 'en' ? 'Jan 2025' : 'Ene 2025',
           },
         ]}
       />

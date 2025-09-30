@@ -81,7 +81,7 @@ export default function RyderCup2027Page({ params }: { params: { locale: Locale 
           { label: locale === 'en' ? 'Dates' : 'Fechas', value: 'Sept 17-19, 2027' },
           { label: locale === 'en' ? 'Venue' : 'Sede', value: 'Adare Manor' },
           { label: locale === 'en' ? 'Location' : 'Ubicación', value: 'Limerick, Ireland' },
-          { label: locale === 'en' ? 'Airport' : 'Aeropuerto', value: 'Shannon (25min)' },
+          { label: locale === 'en' ? 'Last Updated' : 'Actualizado', value: locale === 'en' ? 'Jan 2025' : 'Ene 2025' },
         ]}
       />
 
