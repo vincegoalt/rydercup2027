@@ -2,6 +2,7 @@ import { Locale, getLocalizedValue } from '@/lib/i18n';
 import { faqs } from '@/data/faqs';
 import Link from 'next/link';
 import HeroBlock from '@/components/blocks/HeroBlock';
+import { generateFAQSchema } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
@@ -45,8 +46,20 @@ export default function FAQsPage({ params }: { params: { locale: Locale } }) {
     costs: { en: 'Costs & Fees', es: 'Costos y Tarifas', icon: '💰' },
   };
 
+  // Generate FAQ Schema for all FAQs
+  const faqSchema = generateFAQSchema(
+    faqs.map((faq) => ({
+      question: getLocalizedValue(faq.question, locale),
+      answer: getLocalizedValue(faq.answer, locale),
+    }))
+  );
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <HeroBlock
         title={
           locale === 'en'
