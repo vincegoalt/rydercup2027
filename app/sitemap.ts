@@ -3,6 +3,7 @@ import { locales } from '@/lib/i18n';
 import { golfCourses } from '@/data/courses';
 import { hotels } from '@/data/hotels';
 import { locations } from '@/data/locations';
+import { faqs } from '@/data/faqs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.adarelimerickgolf.com';
@@ -22,6 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/ireland-golf-trip-itineraries',
     '/ryder-cup-future-venues',
     '/contact',
+    '/faqs',
+    '/guides',
+    '/guide/best-time-visit-ireland-golf',
+    '/guide/ireland-golf-trip-cost-budget',
+    '/guide/ballybunion-vs-lahinch-comparison',
   ];
 
   locales.forEach((locale) => {
@@ -85,6 +91,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       // Getting to location
       routes.push({
         url: `${baseUrl}/${locale}/getting-to-${location.slug}`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.6,
+      });
+    });
+
+    // FAQ individual pages
+    faqs.forEach((faq) => {
+      routes.push({
+        url: `${baseUrl}/${locale}/faq/${faq.id}`,
         lastModified: now,
         changeFrequency: 'monthly',
         priority: 0.6,

@@ -21,6 +21,8 @@ export default function Header({ locale, translations }: HeaderProps) {
     { name: translations.golfCourses, href: `/${locale}/golf-courses-near-adare` },
     { name: translations.hotels, href: `/${locale}/hotels-near-adare-manor` },
     { name: translations.planYourTrip, href: `/${locale}/ireland-golf-trip-itineraries` },
+    { name: locale === 'en' ? 'Locations' : 'Ubicaciones', href: `/${locale}/adare` },
+    { name: locale === 'en' ? 'FAQs' : 'Preguntas', href: `/${locale}/faqs` },
   ];
 
   return (
