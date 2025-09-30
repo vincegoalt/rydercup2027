@@ -19,7 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/adare-manor-golf-course',
     '/hotels-near-adare-manor',
     '/getting-to-adare-manor',
-    '/golf-courses-near-adare',
     '/ireland-golf-trip-itineraries',
     '/ryder-cup-future-venues',
     '/contact',

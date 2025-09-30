@@ -22,6 +22,7 @@ export default function Header({ locale, translations }: HeaderProps) {
     { name: translations.hotels, href: `/${locale}/hotels-near-adare-manor` },
     { name: translations.planYourTrip, href: `/${locale}/ireland-golf-trip-itineraries` },
     { name: locale === 'en' ? 'Locations' : 'Ubicaciones', href: `/${locale}/adare` },
+    { name: locale === 'en' ? 'Guides' : 'Guías', href: `/${locale}/guides` },
     { name: locale === 'en' ? 'FAQs' : 'Preguntas', href: `/${locale}/faqs` },
   ];
 
