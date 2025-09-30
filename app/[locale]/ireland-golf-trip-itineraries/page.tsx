@@ -110,10 +110,10 @@ export default function ItinerariesPage({ params }: { params: { locale: Locale }
             </div>
 
             <div className="bg-navy-600 text-white rounded-xl p-8">
-              <h3 className="text-2xl font-heading font-bold mb-4">
+              <h3 className="text-2xl font-heading font-bold mb-4 text-white">
                 {locale === 'en' ? 'Planning Tips' : 'Consejos de Planificación'}
               </h3>
-              <ul className="space-y-3 text-gray-200">
+              <ul className="space-y-3 text-gray-100">
                 <li>• {locale === 'en' ? 'Book tee times 3-6 months in advance' : 'Reserve horarios 3-6 meses con anticipación'}</li>
                 <li>• {locale === 'en' ? 'Rent a car for flexibility between courses' : 'Alquile un coche para flexibilidad entre campos'}</li>
                 <li>• {locale === 'en' ? 'Pack rain gear and layers (Irish weather changes fast)' : 'Empaque ropa para lluvia y capas (el clima irlandés cambia rápido)'}</li>

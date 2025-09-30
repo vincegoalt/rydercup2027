@@ -251,10 +251,10 @@ export default function RyderCup2027Page({ params }: { params: { locale: Locale 
       {/* CTA */}
       <section className="section-padding bg-navy-600 text-white">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-heading font-bold mb-4">
+          <h2 className="text-3xl font-heading font-bold mb-4 text-white">
             {locale === 'en' ? 'Plan Your Complete Ireland Golf Trip' : 'Planifica tu Viaje de Golf Completo a Irlanda'}
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
             {locale === 'en'
               ? 'Combine the Ryder Cup with a 7-10 day golf itinerary around southwest Ireland.'
               : 'Combina la Ryder Cup con un itinerario de golf de 7-10 días por el suroeste de Irlanda.'}

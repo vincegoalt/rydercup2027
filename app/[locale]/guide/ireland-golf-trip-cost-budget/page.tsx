@@ -431,7 +431,7 @@ export default function IrelandGolfCostPage({ params }: { params: { locale: Loca
       {/* Money-Saving Tips */}
       <section className="section-padding bg-navy-600 text-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-heading font-bold mb-8 text-center">
+          <h2 className="text-3xl font-heading font-bold mb-8 text-center text-white">
             {locale === 'en' ? 'Money-Saving Tips' : 'Consejos para Ahorrar'}
           </h2>
 
@@ -440,7 +440,7 @@ export default function IrelandGolfCostPage({ params }: { params: { locale: Loca
               <h3 className="font-heading font-bold text-emerald-400 mb-3">
                 💡 {locale === 'en' ? 'Book Early' : 'Reserve Temprano'}
               </h3>
-              <p className="text-gray-200">
+              <p className="text-gray-100">
                 {locale === 'en'
                   ? 'Green fees and hotels for Ryder Cup week are already filling up. Booking 12-18 months ahead locks in better rates.'
                   : 'Green fees y hoteles para semana Ryder Cup ya se están llenando. Reservar 12-18 meses antes asegura mejores tarifas.'}
@@ -451,7 +451,7 @@ export default function IrelandGolfCostPage({ params }: { params: { locale: Loca
               <h3 className="font-heading font-bold text-emerald-400 mb-3">
                 🌤️ {locale === 'en' ? 'Travel Shoulder Season' : 'Viajar Temporada Baja'}
               </h3>
-              <p className="text-gray-200">
+              <p className="text-gray-100">
                 {locale === 'en'
                   ? 'April-May or October offer 20-30% lower rates than peak summer, with still-playable conditions.'
                   : 'Abril-mayo u octubre ofrecen tarifas 20-30% más bajas que verano, con condiciones aún jugables.'}
@@ -462,7 +462,7 @@ export default function IrelandGolfCostPage({ params }: { params: { locale: Loca
               <h3 className="font-heading font-bold text-emerald-400 mb-3">
                 ⛳ {locale === 'en' ? 'Mix Course Tiers' : 'Mezclar Niveles'}
               </h3>
-              <p className="text-gray-200">
+              <p className="text-gray-100">
                 {locale === 'en'
                   ? 'Play 1-2 bucket-list courses (Ballybunion, Adare), then add quality mid-tier courses (Limerick, Killarney).'
                   : 'Juegue 1-2 campos lista de deseos (Ballybunion, Adare), luego agregue campos rango medio de calidad (Limerick, Killarney).'}
@@ -473,7 +473,7 @@ export default function IrelandGolfCostPage({ params }: { params: { locale: Loca
               <h3 className="font-heading font-bold text-emerald-400 mb-3">
                 🏨 {locale === 'en' ? 'Stay Strategic' : 'Hospedaje Estratégico'}
               </h3>
-              <p className="text-gray-200">
+              <p className="text-gray-100">
                 {locale === 'en'
                   ? 'Base in Limerick City or Adare Village for central access. Avoid changing hotels to save on packing/unpacking.'
                   : 'Establézcase en Limerick City o Adare Village para acceso central. Evite cambiar hoteles para ahorrar en empacar/desempacar.'}

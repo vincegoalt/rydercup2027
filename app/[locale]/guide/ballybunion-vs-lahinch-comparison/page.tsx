@@ -56,7 +56,7 @@ export default function BallybunionVsLahinchPage({ params }: { params: { locale:
               ? 'Ballybunion Old Course vs Lahinch Golf Club'
               : 'Ballybunion Old Course vs Lahinch Golf Club'}
           </h1>
-          <p className="text-xl text-gray-200 mb-4">
+          <p className="text-xl text-gray-100 mb-4">
             {locale === 'en'
               ? 'The ultimate comparison of two legendary Irish links courses near Adare Manor'
               : 'La comparación definitiva de dos campos links irlandeses legendarios cerca de Adare Manor'}
@@ -253,7 +253,7 @@ export default function BallybunionVsLahinchPage({ params }: { params: { locale:
       {/* Head-to-Head Categories */}
       <section className="section-padding bg-navy-600 text-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-heading font-bold mb-8 text-center">
+          <h2 className="text-3xl font-heading font-bold mb-8 text-center text-white">
             {locale === 'en' ? 'Head-to-Head Comparison' : 'Comparación Directa'}
           </h2>
 
@@ -262,10 +262,10 @@ export default function BallybunionVsLahinchPage({ params }: { params: { locale:
               <h3 className="text-xl font-heading font-bold text-emerald-400 mb-3">
                 🏆 {locale === 'en' ? 'Overall Prestige' : 'Prestigio General'}
               </h3>
-              <p className="text-gray-200 mb-2">
+              <p className="text-gray-100 mb-2">
                 <strong className="text-white">{locale === 'en' ? 'Winner: Ballybunion' : 'Ganador: Ballybunion'}</strong>
               </p>
-              <p className="text-gray-300">
+              <p className="text-gray-100">
                 {locale === 'en'
                   ? 'Ballybunion consistently ranks higher in world rankings and is considered one of the purest links experiences on earth.'
                   : 'Ballybunion se clasifica constantemente más alto en los rankings mundiales y se considera una de las experiencias de links más puras del mundo.'}
@@ -276,10 +276,10 @@ export default function BallybunionVsLahinchPage({ params }: { params: { locale:
               <h3 className="text-xl font-heading font-bold text-emerald-400 mb-3">
                 💰 {locale === 'en' ? 'Value for Money' : 'Relación Calidad-Precio'}
               </h3>
-              <p className="text-gray-200 mb-2">
+              <p className="text-gray-100 mb-2">
                 <strong className="text-white">{locale === 'en' ? 'Winner: Lahinch' : 'Ganador: Lahinch'}</strong>
               </p>
-              <p className="text-gray-300">
+              <p className="text-gray-100">
                 {locale === 'en'
                   ? 'Lahinch offers slightly lower green fees and is easier to book, especially for visitors without advance planning.'
                   : 'Lahinch ofrece green fees ligeramente más bajos y es más fácil de reservar, especialmente para visitantes sin planificación previa.'}
@@ -290,10 +290,10 @@ export default function BallybunionVsLahinchPage({ params }: { params: { locale:
               <h3 className="text-xl font-heading font-bold text-emerald-400 mb-3">
                 🌊 {locale === 'en' ? 'Scenery & Views' : 'Paisaje y Vistas'}
               </h3>
-              <p className="text-gray-200 mb-2">
+              <p className="text-gray-100 mb-2">
                 <strong className="text-white">{locale === 'en' ? 'Tie' : 'Empate'}</strong>
               </p>
-              <p className="text-gray-300">
+              <p className="text-gray-100">
                 {locale === 'en'
                   ? 'Both offer breathtaking Atlantic Ocean views. Ballybunion has higher, more dramatic dunes; Lahinch has better views from the clifftop holes.'
                   : 'Ambos ofrecen impresionantes vistas del Océano Atlántico. Ballybunion tiene dunas más altas y dramáticas; Lahinch tiene mejores vistas desde los hoyos en acantilados.'}
@@ -304,10 +304,10 @@ export default function BallybunionVsLahinchPage({ params }: { params: { locale:
               <h3 className="text-xl font-heading font-bold text-emerald-400 mb-3">
                 ⛳ {locale === 'en' ? 'Playability' : 'Jugabilidad'}
               </h3>
-              <p className="text-gray-200 mb-2">
+              <p className="text-gray-100 mb-2">
                 <strong className="text-white">{locale === 'en' ? 'Winner: Lahinch' : 'Ganador: Lahinch'}</strong>
               </p>
-              <p className="text-gray-300">
+              <p className="text-gray-100">
                 {locale === 'en'
                   ? 'Lahinch is more forgiving for average golfers. Ballybunion demands precision and course management, especially in wind.'
                   : 'Lahinch es más indulgente para golfistas promedio. Ballybunion exige precisión y gestión del campo, especialmente con viento.'}
