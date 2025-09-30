@@ -5,6 +5,7 @@ import { faqs } from '@/data/faqs';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import Link from 'next/link';
 import Image from 'next/image';
+import { generateBookingLink, generateDirectCourseLink } from '@/lib/affiliates';
 
 export default function HomePage({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
@@ -76,30 +77,49 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {golfCourses.slice(0, 6).map((course) => (
-              <Link
-                key={course.id}
-                href={`/${locale}/golf-courses/${course.slug}`}
-                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-              >
-                <div className="relative h-48">
-                  <Image src={course.imageUrl} alt={course.name} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
-                  <div className="absolute top-4 right-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {course.greenFee}
+            {golfCourses.slice(0, 6).map((course) => {
+              const teeTimeLink = generateDirectCourseLink(course.slug);
+
+              return (
+                <div
+                  key={course.id}
+                  className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
+                >
+                  <Link href={`/${locale}/golf-courses/${course.slug}`} className="block">
+                    <div className="relative h-48">
+                      <Image src={course.imageUrl} alt={course.name} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                      <div className="absolute top-4 right-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        {course.greenFee}
+                      </div>
+                    </div>
+                  </Link>
+                  <div className="p-5 flex-1 flex flex-col">
+                    <Link href={`/${locale}/golf-courses/${course.slug}`}>
+                      <h3 className="font-heading font-bold text-xl text-navy-600 mb-2 group-hover:text-emerald-600 transition-colors">
+                        {course.name}
+                      </h3>
+                    </Link>
+                    <p className="text-gray-600 text-sm mb-3 flex-1">{getLocalizedValue(course.description, locale).substring(0, 120)}...</p>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-emerald-600 text-sm font-semibold">{course.distanceFromAdare}</span>
+                      <span className="text-gray-500 text-sm capitalize">{course.type}</span>
+                    </div>
+                    {teeTimeLink !== '#' && (
+                      <a
+                        href={teeTimeLink}
+                        target="_blank"
+                        rel="noopener noreferrer sponsored"
+                        className="w-full bg-navy-600 hover:bg-navy-700 text-white text-center py-2 px-4 rounded-lg font-semibold text-sm transition-colors"
+                        data-analytics="tee-time-booking"
+                        data-course-name={course.name}
+                      >
+                        {locale === 'en' ? 'Book Tee Time' : 'Reservar Hora'}
+                      </a>
+                    )}
                   </div>
                 </div>
-                <div className="p-5">
-                  <h3 className="font-heading font-bold text-xl text-navy-600 mb-2 group-hover:text-emerald-600 transition-colors">
-                    {course.name}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-3">{getLocalizedValue(course.description, locale).substring(0, 120)}...</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-emerald-600 text-sm font-semibold">{course.distanceFromAdare}</span>
-                    <span className="text-gray-500 text-sm capitalize">{course.type}</span>
-                  </div>
-                </div>
-              </Link>
-            ))}
+              );
+            })}
           </div>
 
           <div className="text-center mt-10">
@@ -125,24 +145,38 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {hotels.slice(0, 4).map((hotel) => (
-              <div key={hotel.id} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-                <div className="relative h-40">
-                  <Image src={hotel.imageUrl} alt={hotel.name} fill className="object-cover" />
-                  <div className="absolute top-4 left-4 bg-white px-2 py-1 rounded-md text-sm font-bold text-gray-700">
-                    {hotel.priceRange}
+            {hotels.slice(0, 4).map((hotel) => {
+              const bookingLink = generateBookingLink(hotel.name, hotel.location);
+
+              return (
+                <div key={hotel.id} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow flex flex-col">
+                  <div className="relative h-40">
+                    <Image src={hotel.imageUrl} alt={hotel.name} fill className="object-cover" />
+                    <div className="absolute top-4 left-4 bg-white px-2 py-1 rounded-md text-sm font-bold text-gray-700">
+                      {hotel.priceRange}
+                    </div>
+                  </div>
+                  <div className="p-4 flex-1 flex flex-col">
+                    <h3 className="font-heading font-bold text-lg text-navy-600 mb-1">{hotel.name}</h3>
+                    <p className="text-sm text-gray-600 mb-2">{hotel.distanceFromAdare}</p>
+                    <div className="flex items-center text-sm mb-3">
+                      <span className="text-gold-500">★</span>
+                      <span className="ml-1 font-semibold">{hotel.rating}</span>
+                    </div>
+                    <a
+                      href={bookingLink}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="mt-auto w-full bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-4 rounded-lg font-semibold text-sm transition-colors"
+                      data-analytics="hotel-booking"
+                      data-hotel-name={hotel.name}
+                    >
+                      {locale === 'en' ? 'Check Availability' : 'Ver Disponibilidad'}
+                    </a>
                   </div>
                 </div>
-                <div className="p-4">
-                  <h3 className="font-heading font-bold text-lg text-navy-600 mb-1">{hotel.name}</h3>
-                  <p className="text-sm text-gray-600 mb-2">{hotel.distanceFromAdare}</p>
-                  <div className="flex items-center text-sm">
-                    <span className="text-gold-500">★</span>
-                    <span className="ml-1 font-semibold">{hotel.rating}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className="text-center mt-10">
