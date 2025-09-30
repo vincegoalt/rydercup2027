@@ -89,7 +89,7 @@ export default function LocationHubPage({ params }: { params: { locale: Locale; 
 
           <div className="grid md:grid-cols-3 gap-6">
             <Link
-              href={`/${locale}/golf-courses-near-${locationSlug}`}
+              href={`/${locale}/golf/courses-near/${locationSlug}`}
               className="bg-emerald-50 rounded-xl p-6 hover:shadow-lg transition-shadow"
             >
               <div className="text-4xl mb-3">⛳</div>
@@ -146,7 +146,7 @@ export default function LocationHubPage({ params }: { params: { locale: Locale; 
                 : `Campos de Golf Cerca de ${location.name}`}
             </h2>
             <Link
-              href={`/${locale}/golf-courses-near-${locationSlug}`}
+              href={`/${locale}/golf/courses-near/${locationSlug}`}
               className="text-emerald-600 hover:text-emerald-700 font-semibold flex items-center"
             >
               {locale === 'en' ? 'View All' : 'Ver Todo'}

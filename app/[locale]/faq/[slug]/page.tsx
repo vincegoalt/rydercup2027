@@ -235,7 +235,7 @@ export default function FAQDetailPage({ params }: { params: { locale: Locale; sl
                     '/adare-manor-golf-course': { en: 'Adare Manor Course', es: 'Campo Adare Manor' },
                     '/hotels-near-adare-manor': { en: 'Hotels Near Adare', es: 'Hoteles Cerca de Adare' },
                     '/getting-to-adare-manor': { en: 'Getting to Adare', es: 'Cómo Llegar a Adare' },
-                    '/golf-courses-near-adare': { en: 'Golf Courses Near Adare', es: 'Campos Cerca de Adare' },
+                    '/golf/courses-near/adare': { en: 'Golf Courses Near Adare', es: 'Campos Cerca de Adare' },
                     '/ireland-golf-trip-itineraries': { en: 'Trip Itineraries', es: 'Itinerarios' },
                   };
 

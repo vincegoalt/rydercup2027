@@ -172,7 +172,7 @@ export default function HotelsNearLocationPage({ params }: { params: { locale: L
           </div>
 
           <div className="mt-8 flex gap-4">
-            <Link href={`/${locale}/golf-courses-near-${locationSlug}`} className="btn-primary">
+            <Link href={`/${locale}/golf/courses-near/${locationSlug}`} className="btn-primary">
               {locale === 'en' ? 'Golf Courses Nearby' : 'Campos de Golf Cerca'}
             </Link>
             <Link href={`/${locale}/getting-to-${locationSlug}`} className="btn-outline">

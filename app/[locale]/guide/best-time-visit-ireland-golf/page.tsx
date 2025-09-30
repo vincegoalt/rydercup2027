@@ -356,7 +356,7 @@ export default function BestTimeVisitGuidePage({ params }: { params: { locale: L
             <Link href={`/${locale}/ryder-cup-2027-adare-manor`} className="btn-primary bg-white text-emerald-600 hover:bg-gray-100">
               {locale === 'en' ? 'Ryder Cup 2027 Guide' : 'Guía Ryder Cup 2027'}
             </Link>
-            <Link href={`/${locale}/golf-courses-near-adare`} className="btn-outline border-white text-white hover:bg-white hover:text-emerald-600">
+            <Link href={`/${locale}/golf/courses-near/adare`} className="btn-outline border-white text-white hover:bg-white hover:text-emerald-600">
               {locale === 'en' ? 'Golf Courses' : 'Campos de Golf'}
             </Link>
           </div>

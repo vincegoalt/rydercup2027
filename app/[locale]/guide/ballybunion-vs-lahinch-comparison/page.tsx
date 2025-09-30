@@ -40,7 +40,7 @@ export default function BallybunionVsLahinchPage({ params }: { params: { locale:
         items={[
           {
             label: locale === 'en' ? 'Golf Guides' : 'Guías de Golf',
-            href: `/${locale}/golf-courses-near-adare`,
+            href: `/${locale}/golf/courses-near/adare`,
           },
           {
             label: locale === 'en' ? 'Ballybunion vs Lahinch' : 'Ballybunion vs Lahinch',

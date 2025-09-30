@@ -64,7 +64,7 @@ export default function RyderCup2027Page({ params }: { params: { locale: Locale 
           },
           {
             text: locale === 'en' ? 'Play Golf Nearby' : 'Jugar Golf Cerca',
-            href: `/${locale}/golf-courses-near-adare`,
+            href: `/${locale}/golf/courses-near/adare`,
           },
         ]}
         keyFacts={[
@@ -220,7 +220,7 @@ export default function RyderCup2027Page({ params }: { params: { locale: Locale 
             </div>
 
             <div className="text-center mt-8">
-              <Link href={`/${locale}/golf-courses-near-adare`} className="btn-outline">
+              <Link href={`/${locale}/golf/courses-near/adare`} className="btn-outline">
                 {locale === 'en' ? 'View All Golf Courses' : 'Ver Todos los Campos'}
               </Link>
             </div>

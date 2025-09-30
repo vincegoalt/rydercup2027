@@ -18,7 +18,7 @@ export default function Header({ locale, translations }: HeaderProps) {
 
   const navigation = [
     { name: translations.ryderCup2027, href: `/${locale}/ryder-cup-2027-adare-manor` },
-    { name: translations.golfCourses, href: `/${locale}/golf-courses-near-adare` },
+    { name: translations.golfCourses, href: `/${locale}/golf/courses-near/adare` },
     { name: translations.hotels, href: `/${locale}/hotels-near-adare-manor` },
     { name: translations.planYourTrip, href: `/${locale}/ireland-golf-trip-itineraries` },
     { name: locale === 'en' ? 'Locations' : 'Ubicaciones', href: `/${locale}/adare` },

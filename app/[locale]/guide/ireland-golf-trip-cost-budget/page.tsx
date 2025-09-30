@@ -498,7 +498,7 @@ export default function IrelandGolfCostPage({ params }: { params: { locale: Loca
             <Link href={`/${locale}/ireland-golf-trip-itineraries`} className="btn-primary bg-white text-emerald-600 hover:bg-gray-100">
               {locale === 'en' ? 'View Itineraries' : 'Ver Itinerarios'}
             </Link>
-            <Link href={`/${locale}/golf-courses-near-adare`} className="btn-outline border-white text-white hover:bg-white hover:text-emerald-600">
+            <Link href={`/${locale}/golf/courses-near/adare`} className="btn-outline border-white text-white hover:bg-white hover:text-emerald-600">
               {locale === 'en' ? 'Browse Golf Courses' : 'Explorar Campos'}
             </Link>
             <Link href={`/${locale}/hotels-near-adare-manor`} className="btn-outline border-white text-white hover:bg-white hover:text-emerald-600">

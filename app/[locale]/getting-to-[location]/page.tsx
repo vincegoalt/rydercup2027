@@ -291,7 +291,7 @@ export default function GettingToLocationPage({ params }: { params: { locale: Lo
             <Link href={`/${locale}/hotels-near-${locationSlug}`} className="btn-primary">
               {locale === 'en' ? 'Find Hotels' : 'Buscar Hoteles'}
             </Link>
-            <Link href={`/${locale}/golf-courses-near-${locationSlug}`} className="btn-outline">
+            <Link href={`/${locale}/golf/courses-near/${locationSlug}`} className="btn-outline">
               {locale === 'en' ? 'Golf Courses Nearby' : 'Campos de Golf Cerca'}
             </Link>
           </div>

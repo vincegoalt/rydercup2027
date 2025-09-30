@@ -64,7 +64,7 @@ export default function CourseDetailPage({ params }: { params: { locale: Locale;
           </div>
 
           <div className="mt-8 text-center">
-            <Link href={`/${locale}/golf-courses-near-adare`} className="btn-outline">
+            <Link href={`/${locale}/golf/courses-near/adare`} className="btn-outline">
               {locale === 'en' ? '← Back to All Courses' : '← Volver a Todos los Campos'}
             </Link>
           </div>

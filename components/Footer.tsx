@@ -45,7 +45,7 @@ export default function Footer({ locale, translations }: FooterProps) {
             <h4 className="font-heading font-semibold mb-4 text-white">{translations.planYourTrip}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href={`/${locale}/golf-courses-near-adare`} className="text-gray-300 hover:text-white transition-colors">
+                <Link href={`/${locale}/golf/courses-near/adare`} className="text-gray-300 hover:text-white transition-colors">
                   {translations.golfCourses}
                 </Link>
               </li>

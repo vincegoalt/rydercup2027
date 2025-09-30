@@ -137,7 +137,7 @@ export const faqs: FAQ[] = [
       es: 'Opciones locales: Limerick Golf Club (20min) y Ballyneety (30min). Mejores campos links en 1-2 horas: Ballybunion Old Course (1h 15min, top-10 mundial), Lahinch Golf Club (1h 10min, diseño MacKenzie), Tralee Golf Club (1h 25min, Arnold Palmer) y Trump International Doonbeg (1h 20min).',
     },
     category: 'golf',
-    relatedPages: ['/golf-courses-near-adare', '/southwest-ireland-golf-links'],
+    relatedPages: ['/golf/courses-near/adare', '/southwest-ireland-golf-links'],
     keywords: ['golf courses near adare', 'ballybunion', 'lahinch', 'ireland golf'],
   },
   {

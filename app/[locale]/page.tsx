@@ -40,7 +40,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
         backgroundImage="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=1600"
         ctaButtons={[
           { text: content.cta1, href: `/${locale}/ryder-cup-2027-adare-manor`, primary: true },
-          { text: content.cta2, href: `/${locale}/golf-courses-near-adare` },
+          { text: content.cta2, href: `/${locale}/golf/courses-near/adare` },
         ]}
         keyFacts={[
           {
@@ -123,7 +123,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
           </div>
 
           <div className="text-center mt-10">
-            <Link href={`/${locale}/golf-courses-near-adare`} className="btn-primary">
+            <Link href={`/${locale}/golf/courses-near/adare`} className="btn-primary">
               {locale === 'en' ? 'View All Golf Courses' : 'Ver Todos los Campos'}
             </Link>
           </div>

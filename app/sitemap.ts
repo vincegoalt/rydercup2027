@@ -73,7 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     locations.forEach((location) => {
       // Golf courses near location
       routes.push({
-        url: `${baseUrl}/${locale}/golf-courses-near-${location.slug}`,
+        url: `${baseUrl}/${locale}/golf/courses-near/${location.slug}`,
         lastModified: now,
         changeFrequency: 'monthly',
         priority: 0.7,

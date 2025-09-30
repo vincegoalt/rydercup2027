@@ -144,7 +144,7 @@ export default function GuidesPage({ params }: { params: { locale: Locale } }) {
             </Link>
 
             <Link
-              href={`/${locale}/golf-courses-near-adare`}
+              href={`/${locale}/golf/courses-near/adare`}
               className="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow text-center"
             >
               <div className="text-4xl mb-3">🏌️</div>
