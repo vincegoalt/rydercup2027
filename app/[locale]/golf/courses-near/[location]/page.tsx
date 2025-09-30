@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import Link from 'next/link';
 import Image from 'next/image';
+import { generateMetadata as genMeta } from '@/lib/seo';
 
 export async function generateStaticParams() {
   const params = [];
@@ -14,6 +15,27 @@ export async function generateStaticParams() {
     }
   }
   return params;
+}
+
+export async function generateMetadata({ params }: { params: { locale: Locale; location: string } }) {
+  const { locale, location: locationSlug } = params;
+  const location = locations.find((loc) => loc.slug === locationSlug);
+
+  if (!location) {
+    return {};
+  }
+
+  return genMeta({
+    title: locale === 'en'
+      ? `Golf Courses Near ${location.name} | Play ${location.county} Ireland Golf`
+      : `Campos de Golf Cerca de ${location.name} | Jugar Golf ${location.county} Irlanda`,
+    description: locale === 'en'
+      ? `Discover golf courses near ${location.name}, ${location.county}. ${location.distanceFromAdare} from Adare Manor & Ryder Cup 2027. Links, parkland & championship courses.`
+      : `Descubre campos de golf cerca de ${location.name}, ${location.county}. ${location.distanceFromAdare} desde Adare Manor y Ryder Cup 2027. Campos links, parkland y de campeonato.`,
+    keywords: [`${location.name.toLowerCase()} golf courses`, `golf ${location.county.toLowerCase()}`, `${location.name.toLowerCase()} golf`, 'ireland golf courses', 'ryder cup golf'],
+    locale,
+    canonicalUrl: `https://www.adarelimerickgolf.com/${locale}/golf/courses-near/${locationSlug}`,
+  });
 }
 
 export default function GolfCoursesNearLocationPage({ params }: { params: { locale: Locale; location: string } }) {

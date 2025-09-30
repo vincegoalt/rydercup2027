@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import Link from 'next/link';
 import Image from 'next/image';
+import { generateMetadata as genMeta } from '@/lib/seo';
 
 export async function generateStaticParams() {
   const params = [];
@@ -15,6 +16,27 @@ export async function generateStaticParams() {
     }
   }
   return params;
+}
+
+export async function generateMetadata({ params }: { params: { locale: Locale; location: string } }) {
+  const { locale, location: locationSlug } = params;
+  const location = locations.find((loc) => loc.slug === locationSlug);
+
+  if (!location) {
+    return {};
+  }
+
+  return genMeta({
+    title: locale === 'en'
+      ? `${location.name} Golf & Ryder Cup 2027 Guide | Hotels, Courses & Travel`
+      : `Guía Golf y Ryder Cup 2027 ${location.name} | Hoteles, Campos y Viaje`,
+    description: locale === 'en'
+      ? `Complete ${location.name} guide for Ryder Cup 2027. Golf courses, hotels, ${location.nearestAirport} airport info. ${location.distanceFromAdare} from Adare Manor in ${location.county}.`
+      : `Guía completa de ${location.name} para Ryder Cup 2027. Campos de golf, hoteles, info aeropuerto ${location.nearestAirport}. ${location.distanceFromAdare} desde Adare Manor en ${location.county}.`,
+    keywords: [`${location.name.toLowerCase()} golf`, `${location.name.toLowerCase()} ryder cup`, `${location.county.toLowerCase()} golf courses`, `${location.nearestAirport} ireland`, 'golf ireland'],
+    locale,
+    canonicalUrl: `https://www.adarelimerickgolf.com/${locale}/${locationSlug}`,
+  });
 }
 
 export default function LocationHubPage({ params }: { params: { locale: Locale; location: string } }) {

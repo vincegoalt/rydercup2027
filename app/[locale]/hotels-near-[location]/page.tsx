@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import Link from 'next/link';
 import Image from 'next/image';
+import { generateMetadata as genMeta } from '@/lib/seo';
 
 export async function generateStaticParams() {
   const params = [];
@@ -14,6 +15,27 @@ export async function generateStaticParams() {
     }
   }
   return params;
+}
+
+export async function generateMetadata({ params }: { params: { locale: Locale; location: string } }) {
+  const { locale, location: locationSlug } = params;
+  const location = locations.find((loc) => loc.slug === locationSlug);
+
+  if (!location) {
+    return {};
+  }
+
+  return genMeta({
+    title: locale === 'en'
+      ? `Hotels Near ${location.name} | Ryder Cup 2027 Accommodation ${location.county}`
+      : `Hoteles Cerca de ${location.name} | Alojamiento Ryder Cup 2027 ${location.county}`,
+    description: locale === 'en'
+      ? `Find hotels near ${location.name} for Ryder Cup 2027. ${location.distanceFromAdare} from Adare Manor. Book accommodation in ${location.county}, Ireland. ${location.nearestAirport} airport nearby.`
+      : `Encuentra hoteles cerca de ${location.name} para Ryder Cup 2027. ${location.distanceFromAdare} desde Adare Manor. Reserva alojamiento en ${location.county}, Irlanda. Aeropuerto ${location.nearestAirport} cerca.`,
+    keywords: [`hotels ${location.name.toLowerCase()}`, `${location.name.toLowerCase()} accommodation`, `${location.county.toLowerCase()} hotels`, 'ryder cup 2027 hotels', 'ireland hotels golf'],
+    locale,
+    canonicalUrl: `https://www.adarelimerickgolf.com/${locale}/hotels-near-${locationSlug}`,
+  });
 }
 
 export default function HotelsNearLocationPage({ params }: { params: { locale: Locale; location: string } }) {
