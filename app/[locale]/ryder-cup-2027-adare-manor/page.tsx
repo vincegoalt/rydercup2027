@@ -75,8 +75,161 @@ export default function RyderCup2027Page({ params }: { params: { locale: Locale 
         ]}
       />
 
-      {/* Key Facts Section */}
+      {/* Competition Schedule */}
       <section className="section-padding bg-white">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-3xl font-heading font-bold text-navy-600 mb-8 text-center">
+            {locale === 'en' ? 'Competition Schedule' : 'Calendario de Competición'}
+          </h2>
+
+          <div className="space-y-6">
+            {/* Friday */}
+            <div className="bg-emerald-50 rounded-xl p-6 border-l-4 border-emerald-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="bg-emerald-600 text-white px-4 py-2 rounded-lg font-heading font-bold">
+                  {locale === 'en' ? 'Friday, Sept 17' : 'Viernes, 17 Sept'}
+                </div>
+                <span className="text-emerald-700 font-semibold">
+                  {locale === 'en' ? 'Day 1 — Morning & Afternoon Sessions' : 'Día 1 — Sesiones Mañana y Tarde'}
+                </span>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-heading font-bold text-navy-600 mb-2">
+                    {locale === 'en' ? 'Morning Session (8:00 AM)' : 'Sesión Mañana (8:00 AM)'}
+                  </h4>
+                  <p className="text-gray-700">
+                    <strong>{locale === 'en' ? 'Format:' : 'Formato:'}</strong> {locale === 'en' ? 'Foursomes (Alternate Shot)' : 'Foursomes (Golpe Alternado)'}
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>{locale === 'en' ? 'Matches:' : 'Partidos:'}</strong> 4 {locale === 'en' ? 'matches' : 'partidos'}
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-heading font-bold text-navy-600 mb-2">
+                    {locale === 'en' ? 'Afternoon Session (1:00 PM)' : 'Sesión Tarde (1:00 PM)'}
+                  </h4>
+                  <p className="text-gray-700">
+                    <strong>{locale === 'en' ? 'Format:' : 'Formato:'}</strong> {locale === 'en' ? 'Fourballs (Best Ball)' : 'Fourballs (Mejor Bola)'}
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>{locale === 'en' ? 'Matches:' : 'Partidos:'}</strong> 4 {locale === 'en' ? 'matches' : 'partidos'}
+                  </p>
+                </div>
+                <div className="mt-3 pt-3 border-t border-emerald-200">
+                  <p className="text-emerald-700 font-semibold">
+                    {locale === 'en' ? '8 points available' : '8 puntos disponibles'}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Saturday */}
+            <div className="bg-blue-50 rounded-xl p-6 border-l-4 border-blue-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="bg-blue-600 text-white px-4 py-2 rounded-lg font-heading font-bold">
+                  {locale === 'en' ? 'Saturday, Sept 18' : 'Sábado, 18 Sept'}
+                </div>
+                <span className="text-blue-700 font-semibold">
+                  {locale === 'en' ? 'Day 2 — Morning & Afternoon Sessions' : 'Día 2 — Sesiones Mañana y Tarde'}
+                </span>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-heading font-bold text-navy-600 mb-2">
+                    {locale === 'en' ? 'Morning Session (8:00 AM)' : 'Sesión Mañana (8:00 AM)'}
+                  </h4>
+                  <p className="text-gray-700">
+                    <strong>{locale === 'en' ? 'Format:' : 'Formato:'}</strong> {locale === 'en' ? 'Foursomes (Alternate Shot)' : 'Foursomes (Golpe Alternado)'}
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>{locale === 'en' ? 'Matches:' : 'Partidos:'}</strong> 4 {locale === 'en' ? 'matches' : 'partidos'}
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-heading font-bold text-navy-600 mb-2">
+                    {locale === 'en' ? 'Afternoon Session (1:00 PM)' : 'Sesión Tarde (1:00 PM)'}
+                  </h4>
+                  <p className="text-gray-700">
+                    <strong>{locale === 'en' ? 'Format:' : 'Formato:'}</strong> {locale === 'en' ? 'Fourballs (Best Ball)' : 'Fourballs (Mejor Bola)'}
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>{locale === 'en' ? 'Matches:' : 'Partidos:'}</strong> 4 {locale === 'en' ? 'matches' : 'partidos'}
+                  </p>
+                </div>
+                <div className="mt-3 pt-3 border-t border-blue-200">
+                  <p className="text-blue-700 font-semibold">
+                    {locale === 'en' ? '8 points available' : '8 puntos disponibles'}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Sunday */}
+            <div className="bg-amber-50 rounded-xl p-6 border-l-4 border-amber-600">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="bg-amber-600 text-white px-4 py-2 rounded-lg font-heading font-bold">
+                  {locale === 'en' ? 'Sunday, Sept 19' : 'Domingo, 19 Sept'}
+                </div>
+                <span className="text-amber-700 font-semibold">
+                  {locale === 'en' ? 'Day 3 — Singles Matches' : 'Día 3 — Partidos Individuales'}
+                </span>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-heading font-bold text-navy-600 mb-2">
+                    {locale === 'en' ? 'Singles Session (11:00 AM)' : 'Sesión Individual (11:00 AM)'}
+                  </h4>
+                  <p className="text-gray-700">
+                    <strong>{locale === 'en' ? 'Format:' : 'Formato:'}</strong> {locale === 'en' ? 'Singles (1 vs 1)' : 'Individual (1 vs 1)'}
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>{locale === 'en' ? 'Matches:' : 'Partidos:'}</strong> 12 {locale === 'en' ? 'matches' : 'partidos'}
+                  </p>
+                  <p className="text-gray-700 mt-2 text-sm italic">
+                    {locale === 'en'
+                      ? 'All 12 players from each team compete in singles matches'
+                      : 'Los 12 jugadores de cada equipo compiten en partidos individuales'}
+                  </p>
+                </div>
+                <div className="mt-3 pt-3 border-t border-amber-200">
+                  <p className="text-amber-700 font-semibold">
+                    {locale === 'en' ? '12 points available' : '12 puntos disponibles'}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Total Points */}
+            <div className="bg-navy-600 text-white rounded-xl p-6 text-center">
+              <h3 className="font-heading font-bold text-2xl mb-2 text-white">
+                {locale === 'en' ? 'Total: 28 Points' : 'Total: 28 Puntos'}
+              </h3>
+              <p className="text-gray-100">
+                {locale === 'en'
+                  ? 'First team to 14.5 points wins the Ryder Cup'
+                  : 'El primer equipo en llegar a 14.5 puntos gana la Ryder Cup'}
+              </p>
+            </div>
+
+            {/* Practice Rounds */}
+            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <h3 className="font-heading font-bold text-xl text-navy-600 mb-3">
+                {locale === 'en' ? '📅 Practice Rounds' : '📅 Rondas de Práctica'}
+              </h3>
+              <ul className="space-y-2 text-gray-700">
+                <li><strong>{locale === 'en' ? 'Monday, Sept 13:' : 'Lunes, 13 Sept:'}</strong> {locale === 'en' ? 'Teams arrive & practice' : 'Equipos llegan y practican'}</li>
+                <li><strong>{locale === 'en' ? 'Tuesday, Sept 14:' : 'Martes, 14 Sept:'}</strong> {locale === 'en' ? 'Official practice round' : 'Ronda de práctica oficial'}</li>
+                <li><strong>{locale === 'en' ? 'Wednesday, Sept 15:' : 'Miércoles, 15 Sept:'}</strong> {locale === 'en' ? 'Official practice round' : 'Ronda de práctica oficial'}</li>
+                <li><strong>{locale === 'en' ? 'Thursday, Sept 16:' : 'Jueves, 16 Sept:'}</strong> {locale === 'en' ? 'Opening Ceremony & Gala' : 'Ceremonia de Apertura y Gala'}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Facts Section */}
+      <section className="section-padding bg-cream-100">
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-heading font-bold text-navy-600 mb-8">
             {locale === 'en' ? 'Key Facts' : 'Datos Clave'}
@@ -140,7 +293,7 @@ export default function RyderCup2027Page({ params }: { params: { locale: Locale 
       </section>
 
       {/* Where to Stay */}
-      <section className="section-padding bg-cream-100">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <h2 className="text-3xl font-heading font-bold text-navy-600 mb-8 text-center">
             {locale === 'en' ? 'Where to Stay Near Adare Manor' : 'Dónde Alojarse Cerca de Adare Manor'}
@@ -180,7 +333,7 @@ export default function RyderCup2027Page({ params }: { params: { locale: Locale 
       </section>
 
       {/* Play Golf Nearby */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-cream-100">
         <div className="container-custom">
           <h2 className="text-3xl font-heading font-bold text-navy-600 mb-8 text-center">
             {locale === 'en' ? 'Play Golf Nearby' : 'Juega Golf Cerca'}
@@ -229,7 +382,7 @@ export default function RyderCup2027Page({ params }: { params: { locale: Locale 
       </section>
 
       {/* FAQs */}
-      <section className="section-padding bg-cream-100">
+      <section className="section-padding bg-white">
         <div className="container-custom max-w-4xl">
           <h2 className="text-3xl font-heading font-bold text-navy-600 mb-8 text-center">
             {locale === 'en' ? 'Ryder Cup 2027 FAQs' : 'Preguntas Frecuentes Ryder Cup 2027'}
