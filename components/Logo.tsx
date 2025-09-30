@@ -13,17 +13,17 @@ export default function Logo({ variant = 'light', showText = true, className = '
       <Image
         src="/logo.png"
         alt="Adare Limerick Golf"
-        width={showText ? 50 : 40}
-        height={showText ? 50 : 40}
+        width={showText ? 80 : 60}
+        height={showText ? 80 : 60}
         className="object-contain"
         priority
       />
       {showText && (
-        <div className="ml-3 flex flex-col">
-          <span className={`font-heading font-bold text-lg leading-tight ${variant === 'light' ? 'text-navy-600' : 'text-white'}`}>
+        <div className="ml-4 flex flex-col">
+          <span className={`font-heading font-bold text-xl leading-tight ${variant === 'light' ? 'text-navy-600' : 'text-white'}`}>
             Adare Limerick Golf
           </span>
-          <span className={`text-xs font-medium ${variant === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>
+          <span className={`text-sm font-medium ${variant === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>
             Ryder Cup 2027
           </span>
         </div>
