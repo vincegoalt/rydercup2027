@@ -3,6 +3,7 @@ import { golfCourses } from '@/data/courses';
 import { notFound } from 'next/navigation';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import Link from 'next/link';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export async function generateStaticParams() {
   const params = [];
@@ -24,6 +25,18 @@ export default function CourseDetailPage({ params }: { params: { locale: Locale;
 
   return (
     <>
+      <Breadcrumb
+        locale={locale}
+        items={[
+          {
+            label: locale === 'en' ? 'Golf Courses' : 'Campos de Golf',
+            href: `/${locale}/golf/courses-near/adare`,
+          },
+          {
+            label: course.name,
+          },
+        ]}
+      />
       <HeroBlock
         title={course.name}
         subtitle={`${course.location}, ${course.county}`}

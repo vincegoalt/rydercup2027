@@ -3,6 +3,7 @@ import { faqs } from '@/data/faqs';
 import Link from 'next/link';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import { generateFAQSchema } from '@/lib/seo';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
@@ -59,6 +60,14 @@ export default function FAQsPage({ params }: { params: { locale: Locale } }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Breadcrumb
+        locale={locale}
+        items={[
+          {
+            label: locale === 'en' ? 'FAQs' : 'Preguntas Frecuentes',
+          },
+        ]}
       />
       <HeroBlock
         title={

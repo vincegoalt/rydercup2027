@@ -1,6 +1,7 @@
 import { Locale } from '@/lib/i18n';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import { generateMetadata as genMeta } from '@/lib/seo';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
@@ -22,6 +23,14 @@ export default function ItinerariesPage({ params }: { params: { locale: Locale }
 
   return (
     <>
+      <Breadcrumb
+        locale={locale}
+        items={[
+          {
+            label: locale === 'en' ? 'Trip Itineraries' : 'Itinerarios de Viaje',
+          },
+        ]}
+      />
       <HeroBlock
         title={locale === 'en' ? 'Ireland Golf Trip Itineraries' : 'Itinerarios de Viaje de Golf en Irlanda'}
         subtitle={locale === 'en' ? '8-10 Day Sample Routes with Ryder Cup' : 'Rutas de Muestra 8-10 Días con Ryder Cup'}

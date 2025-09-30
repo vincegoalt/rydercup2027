@@ -3,6 +3,7 @@ import { generateMetadata as genMeta, generateEventSchema, generateFAQSchema } f
 import { faqs } from '@/data/faqs';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import Link from 'next/link';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
@@ -41,6 +42,15 @@ export default function RyderCup2027Page({ params }: { params: { locale: Locale 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <Breadcrumb
+        locale={locale}
+        items={[
+          {
+            label: 'Ryder Cup 2027',
+          },
+        ]}
       />
 
       <HeroBlock
