@@ -70,6 +70,42 @@ export default function HotelsPage({ params }: { params: { locale: Locale } }) {
               </div>
             ))}
           </div>
+
+          {/* Related Content Links */}
+          <div className="mt-16 bg-navy-50 rounded-xl p-8">
+            <h3 className="text-2xl font-heading font-bold text-navy-600 mb-6 text-center">
+              {locale === 'en' ? 'Complete Your Trip Planning' : 'Completa la Planificación de Tu Viaje'}
+            </h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Link href={`/${locale}/golf/courses-near/adare`} className="block bg-white rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-3">⛳</div>
+                <h4 className="font-heading font-bold text-lg text-navy-600 mb-2">
+                  {locale === 'en' ? 'Golf Courses' : 'Campos de Golf'}
+                </h4>
+                <p className="text-sm text-gray-600">
+                  {locale === 'en' ? 'Explore nearby championship courses' : 'Explora campos de campeonato cercanos'}
+                </p>
+              </Link>
+              <Link href={`/${locale}/ryder-cup-2027-adare-manor`} className="block bg-white rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-3">🏆</div>
+                <h4 className="font-heading font-bold text-lg text-navy-600 mb-2">
+                  {locale === 'en' ? 'Ryder Cup 2027' : 'Ryder Cup 2027'}
+                </h4>
+                <p className="text-sm text-gray-600">
+                  {locale === 'en' ? 'Event schedule & ticket info' : 'Calendario y info de entradas'}
+                </p>
+              </Link>
+              <Link href={`/${locale}/ireland-golf-trip-itineraries`} className="block bg-white rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-3">📅</div>
+                <h4 className="font-heading font-bold text-lg text-navy-600 mb-2">
+                  {locale === 'en' ? 'Sample Itineraries' : 'Itinerarios de Ejemplo'}
+                </h4>
+                <p className="text-sm text-gray-600">
+                  {locale === 'en' ? 'Complete trip planning templates' : 'Plantillas completas de planificación'}
+                </p>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>

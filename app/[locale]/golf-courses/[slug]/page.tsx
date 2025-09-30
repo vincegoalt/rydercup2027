@@ -102,10 +102,49 @@ export default function CourseDetailPage({ params }: { params: { locale: Locale;
             </p>
           </div>
 
-          <div className="mt-8 text-center">
+          <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <Link href={`/${locale}/golf/courses-near/adare`} className="btn-outline">
               {locale === 'en' ? '← Back to All Courses' : '← Volver a Todos los Campos'}
             </Link>
+            <Link href={`/${locale}/hotels-near-adare-manor`} className="btn-secondary">
+              {locale === 'en' ? 'Find Hotels Nearby' : 'Buscar Hoteles Cerca'}
+            </Link>
+          </div>
+
+          {/* Related Content Links */}
+          <div className="mt-12 bg-emerald-50 rounded-xl p-8">
+            <h3 className="text-2xl font-heading font-bold text-navy-600 mb-6 text-center">
+              {locale === 'en' ? 'Planning Your Trip?' : '¿Planificando Tu Viaje?'}
+            </h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Link href={`/${locale}/ryder-cup-2027-adare-manor`} className="block bg-white rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-3">🏆</div>
+                <h4 className="font-heading font-bold text-lg text-navy-600 mb-2">
+                  {locale === 'en' ? 'Ryder Cup 2027' : 'Ryder Cup 2027'}
+                </h4>
+                <p className="text-sm text-gray-600">
+                  {locale === 'en' ? 'Event dates, schedule & travel guide' : 'Fechas, calendario y guía de viaje'}
+                </p>
+              </Link>
+              <Link href={`/${locale}/ireland-golf-trip-itineraries`} className="block bg-white rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-3">📅</div>
+                <h4 className="font-heading font-bold text-lg text-navy-600 mb-2">
+                  {locale === 'en' ? 'Trip Itineraries' : 'Itinerarios'}
+                </h4>
+                <p className="text-sm text-gray-600">
+                  {locale === 'en' ? '8-10 day golf trip routes' : 'Rutas de viaje de golf 8-10 días'}
+                </p>
+              </Link>
+              <Link href={`/${locale}/getting-to-adare-manor`} className="block bg-white rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-3">🚗</div>
+                <h4 className="font-heading font-bold text-lg text-navy-600 mb-2">
+                  {locale === 'en' ? 'Getting There' : 'Cómo Llegar'}
+                </h4>
+                <p className="text-sm text-gray-600">
+                  {locale === 'en' ? 'Airports, car rental & transport' : 'Aeropuertos, alquiler auto y transporte'}
+                </p>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
