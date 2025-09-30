@@ -85,7 +85,7 @@ export default function GolfCoursesNearLocationPage({ params }: { params: { loca
                 <div className="relative h-48">
                   <Image
                     src={course.imageUrl}
-                    alt={course.name}
+                    alt={`${course.name} ${course.type} golf course near ${location.name} Ireland`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />

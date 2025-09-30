@@ -142,7 +142,7 @@ export default function BallybunionVsLahinchPage({ params }: { params: { locale:
               <div className="relative h-80 rounded-xl overflow-hidden mb-6">
                 <Image
                   src={ballybunion.imageUrl}
-                  alt="Ballybunion Old Course"
+                  alt="Ballybunion Old Course links golf course County Kerry Ireland"
                   fill
                   className="object-cover"
                 />
@@ -240,7 +240,7 @@ export default function BallybunionVsLahinchPage({ params }: { params: { locale:
               <div className="relative h-80 rounded-xl overflow-hidden mb-6">
                 <Image
                   src={lahinch.imageUrl}
-                  alt="Lahinch Golf Club"
+                  alt="Lahinch Golf Club links course County Clare Ireland"
                   fill
                   className="object-cover"
                 />

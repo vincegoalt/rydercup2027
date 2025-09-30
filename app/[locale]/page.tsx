@@ -103,7 +103,12 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
                 >
                   <Link href={`/${locale}/golf-courses/${course.slug}`} className="block">
                     <div className="relative h-48">
-                      <Image src={course.imageUrl} alt={course.name} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                      <Image
+                        src={course.imageUrl}
+                        alt={`${course.name} ${course.type} golf course near Adare Manor Ireland`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                       <div className="absolute top-4 right-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                         {course.greenFee}
                       </div>
@@ -167,7 +172,12 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
               return (
                 <div key={hotel.id} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow flex flex-col">
                   <div className="relative h-40">
-                    <Image src={hotel.imageUrl} alt={hotel.name} fill className="object-cover" />
+                    <Image
+                      src={hotel.imageUrl}
+                      alt={`${hotel.name} hotel accommodation near Adare Manor Ryder Cup 2027`}
+                      fill
+                      className="object-cover"
+                    />
                     <div className="absolute top-4 left-4 bg-white px-2 py-1 rounded-md text-sm font-bold text-gray-700">
                       {hotel.priceRange}
                     </div>

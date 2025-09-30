@@ -86,7 +86,7 @@ export default function HotelsNearLocationPage({ params }: { params: { locale: L
                 <div className="relative h-56">
                   <Image
                     src={hotel.imageUrl}
-                    alt={hotel.name}
+                    alt={`${hotel.name} ${hotel.location} hotel accommodation near ${location.name} Ryder Cup 2027`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />

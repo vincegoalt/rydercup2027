@@ -164,7 +164,7 @@ export default function LocationHubPage({ params }: { params: { locale: Locale; 
                 <div className="relative h-48">
                   <Image
                     src={course.imageUrl}
-                    alt={course.name}
+                    alt={`${course.name} ${course.type} golf course near ${location.name} Ireland`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -217,7 +217,7 @@ export default function LocationHubPage({ params }: { params: { locale: Locale; 
                 <div className="relative h-48">
                   <Image
                     src={hotel.imageUrl}
-                    alt={hotel.name}
+                    alt={`${hotel.name} ${hotel.location} hotel near ${location.name} Ryder Cup 2027`}
                     fill
                     className="object-cover"
                   />

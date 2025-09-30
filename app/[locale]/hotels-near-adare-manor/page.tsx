@@ -39,7 +39,12 @@ export default function HotelsPage({ params }: { params: { locale: Locale } }) {
             {hotels.map((hotel) => (
               <div key={hotel.id} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
                 <div className="relative h-48">
-                  <Image src={hotel.imageUrl} alt={hotel.name} fill className="object-cover" />
+                  <Image
+                    src={hotel.imageUrl}
+                    alt={`${hotel.name} ${hotel.location} hotel accommodation Ryder Cup 2027 Adare Manor`}
+                    fill
+                    className="object-cover"
+                  />
                   <div className="absolute top-4 left-4 bg-white px-3 py-1 rounded-md font-bold text-gray-700">
                     {hotel.priceRange}
                   </div>
