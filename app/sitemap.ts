@@ -53,6 +53,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
       });
     });
+
+    // Location hub pages
+    locations.forEach((location) => {
+      routes.push({
+        url: `${baseUrl}/${locale}/${location.slug}`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.8,
+      });
+    });
+
+    // Service × Location pages
+    locations.forEach((location) => {
+      // Golf courses near location
+      routes.push({
+        url: `${baseUrl}/${locale}/golf-courses-near-${location.slug}`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      });
+
+      // Hotels near location
+      routes.push({
+        url: `${baseUrl}/${locale}/hotels-near-${location.slug}`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      });
+
+      // Getting to location
+      routes.push({
+        url: `${baseUrl}/${locale}/getting-to-${location.slug}`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.6,
+      });
+    });
   });
 
   return routes;
