@@ -67,9 +67,9 @@ export function generateLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'TravelAgency',
-    name: 'Ireland Golf Planner',
+    name: 'Adare Limerick Golf',
     description: 'Your guide to Ryder Cup 2027 at Adare Manor and golf trips in Ireland',
-    url: 'https://irelandgolfplanner.com',
+    url: 'https://www.adarelimerickgolf.com',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'IE',

@@ -5,7 +5,7 @@ import { hotels } from '@/data/hotels';
 import { locations } from '@/data/locations';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://irelandgolfplanner.com';
+  const baseUrl = 'https://www.adarelimerickgolf.com';
   const now = new Date();
 
   const routes: MetadataRoute.Sitemap = [];

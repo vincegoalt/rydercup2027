@@ -12,7 +12,7 @@ export default function Footer({ locale, translations }: FooterProps) {
       <div className="container-custom py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-heading font-bold mb-4 text-white">Ireland Golf Planner</h3>
+            <h3 className="text-lg font-heading font-bold mb-4 text-white">Adare Limerick Golf</h3>
             <p className="text-gray-300 text-sm">
               {locale === 'en'
                 ? 'Your complete guide to the 2027 Ryder Cup at Adare Manor and golf trips in Ireland.'

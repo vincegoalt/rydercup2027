@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
       : 'Planifica tu viaje a la Ryder Cup 2027 en Adare Manor, condado de Limerick: fechas verificadas, aeropuertos más cercanos, hoteles en Adare y golf que puedes jugar cerca.',
     keywords: ['ryder cup 2027', 'adare manor', 'limerick ireland', 'ryder cup tickets', 'golf ireland'],
     locale,
-    canonicalUrl: `https://irelandgolfplanner.com/${locale}/ryder-cup-2027-adare-manor`,
+    canonicalUrl: `https://www.adarelimerickgolf.com/${locale}/ryder-cup-2027-adare-manor`,
   });
 }
 
