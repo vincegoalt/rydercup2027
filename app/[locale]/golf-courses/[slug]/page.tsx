@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
+import { generateMetadata as genMeta } from '@/lib/seo';
 
 export async function generateStaticParams() {
   const params = [];
@@ -13,6 +14,31 @@ export async function generateStaticParams() {
     }
   }
   return params;
+}
+
+export async function generateMetadata({ params }: { params: { locale: Locale; slug: string } }) {
+  const { locale, slug } = params;
+  const course = golfCourses.find((c) => c.slug === slug);
+
+  if (!course) {
+    return {};
+  }
+
+  const typeText = course.type === 'links' ? (locale === 'en' ? 'Links' : 'Links') :
+                   course.type === 'parkland' ? (locale === 'en' ? 'Parkland' : 'Parkland') :
+                   (locale === 'en' ? 'Championship' : 'Campeonato');
+
+  return genMeta({
+    title: locale === 'en'
+      ? `${course.name} Golf Course | ${typeText} ${course.greenFee} | Near Adare Manor`
+      : `Campo de Golf ${course.name} | ${typeText} ${course.greenFee} | Cerca Adare Manor`,
+    description: locale === 'en'
+      ? `Play ${course.name} - ${typeText} golf course in ${course.location}, County ${course.county}. Green fee ${course.greenFee}. ${course.distanceFromAdare} from Adare Manor & Ryder Cup 2027 venue.`
+      : `Juega ${course.name} - Campo de golf ${typeText} en ${course.location}, condado de ${course.county}. Tarifa ${course.greenFee}. ${course.distanceFromAdare} desde Adare Manor y sede Ryder Cup 2027.`,
+    keywords: [course.name.toLowerCase(), `${course.location.toLowerCase()} golf`, `${course.county.toLowerCase()} golf course`, `${course.type} golf ireland`, course.designer.toLowerCase()],
+    locale,
+    canonicalUrl: `https://www.adarelimerickgolf.com/${locale}/golf-courses/${slug}`,
+  });
 }
 
 export default function CourseDetailPage({ params }: { params: { locale: Locale; slug: string } }) {
