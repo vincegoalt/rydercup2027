@@ -27,6 +27,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/guide/best-time-visit-ireland-golf',
     '/guide/ireland-golf-trip-cost-budget',
     '/guide/ballybunion-vs-lahinch-comparison',
+    '/guide/ireland-golf-courses-comparison',
+    '/guide/things-to-do-near-adare-manor',
+    '/guide/where-to-eat-adare-limerick',
   ];
 
   locales.forEach((locale) => {

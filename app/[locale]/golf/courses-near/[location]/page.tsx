@@ -176,10 +176,10 @@ export default function GolfCoursesNearLocationPage({ params }: { params: { loca
           </div>
 
           <div className="mt-8 flex gap-4">
-            <Link href={`/${locale}/hotels-near/${locationSlug}`} className="btn-primary">
+            <Link href={`/${locale}/hotels-near-${locationSlug}`} className="btn-primary">
               {locale === 'en' ? 'Find Hotels' : 'Buscar Hoteles'}
             </Link>
-            <Link href={`/${locale}/getting-to/${locationSlug}`} className="btn-outline">
+            <Link href={`/${locale}/getting-to-${locationSlug}`} className="btn-outline">
               {locale === 'en' ? 'Getting There' : 'Cómo Llegar'}
             </Link>
           </div>

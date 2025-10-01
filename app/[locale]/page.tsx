@@ -3,6 +3,7 @@ import { golfCourses } from '@/data/courses';
 import { hotels } from '@/data/hotels';
 import { faqs } from '@/data/faqs';
 import HeroBlock from '@/components/blocks/HeroBlock';
+import EmailSignup from '@/components/EmailSignup';
 import Link from 'next/link';
 import Image from 'next/image';
 import { generateBookingLink, generateDirectCourseLink } from '@/lib/affiliates';
@@ -230,6 +231,13 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Email Signup */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-2xl">
+          <EmailSignup locale={locale} />
         </div>
       </section>
 

@@ -68,6 +68,26 @@ export default function GuidesPage({ params }: { params: { locale: Locale } }) {
       icon: '📊',
       category: locale === 'en' ? 'Courses' : 'Campos',
     },
+    {
+      title: locale === 'en' ? 'Things to Do Near Adare Manor' : 'Qué Hacer Cerca de Adare Manor',
+      description:
+        locale === 'en'
+          ? 'Castles, cliffs, whiskey distilleries, and Irish culture. Perfect rest-day activities during Ryder Cup week.'
+          : 'Castillos, acantilados, destilerías de whiskey y cultura irlandesa. Actividades perfectas para días de descanso durante semana Ryder Cup.',
+      href: `/${locale}/guide/things-to-do-near-adare-manor`,
+      icon: '🏰',
+      category: locale === 'en' ? 'Travel' : 'Viaje',
+    },
+    {
+      title: locale === 'en' ? 'Where to Eat in Adare & Limerick' : 'Dónde Comer en Adare y Limerick',
+      description:
+        locale === 'en'
+          ? 'Best restaurants, pubs, and cafés. From Michelin-starred dining to traditional Irish pubs.'
+          : 'Mejores restaurantes, pubs y cafés. Desde cenas con estrellas Michelin hasta pubs tradicionales irlandeses.',
+      href: `/${locale}/guide/where-to-eat-adare-limerick`,
+      icon: '🍽️',
+      category: locale === 'en' ? 'Travel' : 'Viaje',
+    },
   ];
 
   const categories = Array.from(new Set(guides.map((g) => g.category)));

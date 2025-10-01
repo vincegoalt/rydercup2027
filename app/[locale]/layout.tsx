@@ -1,6 +1,8 @@
 import '../globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { Locale, getTranslations, locales } from '@/lib/i18n';
 
 export function generateStaticParams() {
@@ -27,9 +29,11 @@ export default function LocaleLayout({
         <meta name="theme-color" content="#0B6B3A" />
       </head>
       <body>
+        <GoogleAnalytics />
         <Header locale={params.locale} translations={translations} />
         <main className="min-h-screen">{children}</main>
         <Footer locale={params.locale} translations={translations} />
+        <ScrollToTop />
       </body>
     </html>
   );

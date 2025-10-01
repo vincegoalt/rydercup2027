@@ -1,0 +1,26 @@
+# Robots.txt for Adare Limerick Golf - Ryder Cup 2027 Guide
+# https://www.adarelimerickgolf.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.adarelimerickgolf.com/sitemap.xml
+
+# Crawl-delay for good behavior
+Crawl-delay: 1
+
+# Block specific paths if needed (none currently)
+# Disallow: /api/
+# Disallow: /_next/
+
+# Allow all images
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /

@@ -2,6 +2,7 @@ import { Locale, getLocalizedValue } from '@/lib/i18n';
 import { generateMetadata as genMeta, generateEventSchema, generateFAQSchema } from '@/lib/seo';
 import { faqs } from '@/data/faqs';
 import HeroBlock from '@/components/blocks/HeroBlock';
+import EmailSignup from '@/components/EmailSignup';
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
@@ -408,6 +409,13 @@ export default function RyderCup2027Page({ params }: { params: { locale: Locale 
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Email Signup */}
+      <section className="section-padding bg-cream-50">
+        <div className="container-custom max-w-2xl">
+          <EmailSignup locale={locale} variant="inline" />
         </div>
       </section>
 

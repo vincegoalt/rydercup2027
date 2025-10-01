@@ -24,6 +24,7 @@ export default function Header({ locale, translations }: HeaderProps) {
     { name: locale === 'en' ? 'Locations' : 'Ubicaciones', href: `/${locale}/adare` },
     { name: locale === 'en' ? 'Guides' : 'Guías', href: `/${locale}/guides` },
     { name: locale === 'en' ? 'FAQs' : 'Preguntas', href: `/${locale}/faqs` },
+    { name: locale === 'en' ? 'Contact' : 'Contacto', href: `/${locale}/contact` },
   ];
 
   return (

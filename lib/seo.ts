@@ -13,6 +13,10 @@ export interface SEOProps {
 export function generateMetadata(props: SEOProps) {
   const { title, description, keywords, ogImage, canonicalUrl, locale, alternateLocales } = props;
 
+  // Default OG image if none provided
+  const defaultOgImage = 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&h=630&fit=crop';
+  const finalOgImage = ogImage || defaultOgImage;
+
   const metadata: any = {
     title: title,
     description: description,
@@ -20,15 +24,22 @@ export function generateMetadata(props: SEOProps) {
     openGraph: {
       title: title,
       description: description,
-      images: ogImage ? [{ url: ogImage }] : [],
+      images: [{
+        url: finalOgImage,
+        width: 1200,
+        height: 630,
+        alt: title,
+      }],
       locale: locale === 'en' ? 'en_US' : 'es_ES',
       type: 'website',
+      siteName: 'Adare Limerick Golf - Ryder Cup 2027 Guide',
     },
     twitter: {
       card: 'summary_large_image',
       title: title,
       description: description,
-      images: ogImage ? [ogImage] : [],
+      images: [finalOgImage],
+      creator: '@adarelimerickgolf',
     },
   };
 
@@ -68,13 +79,33 @@ export function generateLocalBusinessSchema() {
     '@context': 'https://schema.org',
     '@type': 'TravelAgency',
     name: 'Adare Limerick Golf',
-    description: 'Your guide to Ryder Cup 2027 at Adare Manor and golf trips in Ireland',
+    description: 'Your comprehensive guide to Ryder Cup 2027 at Adare Manor and golf trips in Ireland',
     url: 'https://www.adarelimerickgolf.com',
+    logo: 'https://www.adarelimerickgolf.com/logo.png',
+    image: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200',
     address: {
       '@type': 'PostalAddress',
+      addressLocality: 'Limerick',
+      addressRegion: 'County Limerick',
       addressCountry: 'IE',
     },
-    areaServed: ['Ireland', 'Limerick', 'County Clare', 'County Kerry'],
+    areaServed: [
+      { '@type': 'Country', name: 'Ireland' },
+      { '@type': 'AdministrativeArea', name: 'Limerick' },
+      { '@type': 'AdministrativeArea', name: 'County Clare' },
+      { '@type': 'AdministrativeArea', name: 'County Kerry' },
+    ],
+    knowsAbout: [
+      'Ryder Cup 2027',
+      'Golf Tourism Ireland',
+      'Adare Manor Golf Course',
+      'Irish Links Golf Courses',
+      'Ireland Golf Vacations',
+    ],
+    sameAs: [
+      'https://twitter.com/adarelimerickgolf',
+      'https://facebook.com/adarelimerickgolf',
+    ],
   };
 }
 
