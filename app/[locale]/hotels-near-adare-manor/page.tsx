@@ -2,6 +2,7 @@ import { Locale, getLocalizedValue } from '@/lib/i18n';
 import { hotels } from '@/data/hotels';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import Image from 'next/image';
+import Link from 'next/link';
 import { generateMetadata as genMeta } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
