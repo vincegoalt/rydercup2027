@@ -1,6 +1,7 @@
 import { Locale } from '@/lib/i18n';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import ContactForm from '@/components/ContactForm';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
@@ -29,6 +30,17 @@ export default function ContactPage({ params }: { params: { locale: Locale } }) 
 
   return (
     <>
+      <div className="container-custom">
+        <Breadcrumbs
+          items={[
+            {
+              label: locale === 'en' ? 'Contact' : 'Contacto',
+            },
+          ]}
+          locale={locale}
+        />
+      </div>
+
       <HeroBlock
         title={locale === 'en' ? 'Plan Your Perfect Ireland Golf Trip' : 'Planifica Tu Viaje de Golf Perfecto a Irlanda'}
         subtitle={

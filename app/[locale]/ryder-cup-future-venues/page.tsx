@@ -1,5 +1,6 @@
 import { Locale } from '@/lib/i18n';
 import HeroBlock from '@/components/blocks/HeroBlock';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export default function FutureVenuesPage({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
@@ -16,6 +17,17 @@ export default function FutureVenuesPage({ params }: { params: { locale: Locale 
 
   return (
     <>
+      <div className="container-custom">
+        <Breadcrumbs
+          items={[
+            {
+              label: locale === 'en' ? 'Future Venues' : 'Sedes Futuras',
+            },
+          ]}
+          locale={locale}
+        />
+      </div>
+
       <HeroBlock
         title={locale === 'en' ? 'Future Ryder Cup Venues — 2025 to 2037' : 'Sedes Futuras Ryder Cup — 2025 a 2037'}
         subtitle={locale === 'en' ? 'Upcoming Venues' : 'Próximas Sedes'}

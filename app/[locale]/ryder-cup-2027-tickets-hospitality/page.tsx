@@ -2,6 +2,7 @@ import { Locale } from '@/lib/i18n';
 import { generateMetadata as genMeta } from '@/lib/seo';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import Link from 'next/link';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
@@ -22,6 +23,17 @@ export default function TicketsPage({ params }: { params: { locale: Locale } }) 
 
   return (
     <>
+      <div className="container-custom">
+        <Breadcrumbs
+          items={[
+            {
+              label: locale === 'en' ? 'Tickets & Hospitality' : 'Entradas y Hospitalidad',
+            },
+          ]}
+          locale={locale}
+        />
+      </div>
+
       <HeroBlock
         title={locale === 'en' ? 'Ryder Cup 2027 Tickets & Hospitality' : 'Entradas y Hospitalidad Ryder Cup 2027'}
         subtitle={locale === 'en' ? 'How to Attend' : 'Cómo Asistir'}

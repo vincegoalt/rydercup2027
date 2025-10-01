@@ -1,6 +1,7 @@
 import { Locale } from '@/lib/i18n';
 import Link from 'next/link';
 import HeroBlock from '@/components/blocks/HeroBlock';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
@@ -94,6 +95,17 @@ export default function GuidesPage({ params }: { params: { locale: Locale } }) {
 
   return (
     <>
+      <div className="container-custom">
+        <Breadcrumbs
+          items={[
+            {
+              label: locale === 'en' ? 'Guides' : 'Guías',
+            },
+          ]}
+          locale={locale}
+        />
+      </div>
+
       <HeroBlock
         title={locale === 'en' ? 'Ireland Golf Travel Guides' : 'Guías de Viaje Golf Irlanda'}
         subtitle={

@@ -4,6 +4,7 @@ import HeroBlock from '@/components/blocks/HeroBlock';
 import Image from 'next/image';
 import Link from 'next/link';
 import { generateMetadata as genMeta } from '@/lib/seo';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
@@ -25,6 +26,17 @@ export default function HotelsPage({ params }: { params: { locale: Locale } }) {
 
   return (
     <>
+      <div className="container-custom">
+        <Breadcrumbs
+          items={[
+            {
+              label: locale === 'en' ? 'Hotels Near Adare Manor' : 'Hoteles Cerca de Adare Manor',
+            },
+          ]}
+          locale={locale}
+        />
+      </div>
+
       <HeroBlock
         title={locale === 'en' ? 'Hotels Near Adare Manor' : 'Hoteles Cerca de Adare Manor'}
         subtitle={locale === 'en' ? 'Ryder Cup 2027 Accommodation' : 'Alojamiento Ryder Cup 2027'}

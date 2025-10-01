@@ -1,6 +1,7 @@
 import { Locale } from '@/lib/i18n';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import { generateMetadata as genMeta } from '@/lib/seo';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
@@ -22,6 +23,17 @@ export default function GettingTherePage({ params }: { params: { locale: Locale 
 
   return (
     <>
+      <div className="container-custom">
+        <Breadcrumbs
+          items={[
+            {
+              label: locale === 'en' ? 'Getting to Adare Manor' : 'Cómo Llegar a Adare Manor',
+            },
+          ]}
+          locale={locale}
+        />
+      </div>
+
       <HeroBlock
         title={locale === 'en' ? 'Getting to Adare Manor' : 'Cómo Llegar a Adare Manor'}
         subtitle={locale === 'en' ? 'Airports & Transport' : 'Aeropuertos y Transporte'}

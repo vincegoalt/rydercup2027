@@ -1,6 +1,7 @@
 import { Locale } from '@/lib/i18n';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import { generateMetadata as genMeta } from '@/lib/seo';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
@@ -22,6 +23,17 @@ export default function AdareManorCoursePage({ params }: { params: { locale: Loc
 
   return (
     <>
+      <div className="container-custom">
+        <Breadcrumbs
+          items={[
+            {
+              label: locale === 'en' ? 'Adare Manor Golf Course' : 'Campo de Golf Adare Manor',
+            },
+          ]}
+          locale={locale}
+        />
+      </div>
+
       <HeroBlock
         title={locale === 'en' ? 'Adare Manor Golf Course Guide' : 'Guía del Campo de Golf Adare Manor'}
         subtitle={locale === 'en' ? '2027 Ryder Cup Venue' : 'Sede Ryder Cup 2027'}

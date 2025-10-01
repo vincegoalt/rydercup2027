@@ -1,6 +1,7 @@
 import { Locale } from '@/lib/i18n';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import Link from 'next/link';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
@@ -30,6 +31,21 @@ export default function BestTimeVisitGuidePage({ params }: { params: { locale: L
 
   return (
     <>
+      <div className="container-custom">
+        <Breadcrumbs
+          items={[
+            {
+              label: locale === 'en' ? 'Guides' : 'Guías',
+              href: `/${locale}/guides`,
+            },
+            {
+              label: locale === 'en' ? 'Best Time to Visit' : 'Mejor Época para Visitar',
+            },
+          ]}
+          locale={locale}
+        />
+      </div>
+
       <HeroBlock
         title={
           locale === 'en'
