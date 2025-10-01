@@ -97,6 +97,25 @@ export default function GolfCoursesNearLocationPage({ params }: { params: { loca
               : `Mejores Campos de Golf Cerca de ${location.name}`}
           </h2>
 
+          {/* Course Type Summary */}
+          <div className="mb-8 flex flex-wrap gap-4">
+            <div className="bg-emerald-50 border-l-4 border-emerald-600 px-4 py-3 rounded-r-lg">
+              <span className="font-semibold text-navy-600">
+                {nearbyCourses.filter(c => c.type === 'links').length} {locale === 'en' ? 'Links' : 'Links'}
+              </span>
+            </div>
+            <div className="bg-blue-50 border-l-4 border-blue-600 px-4 py-3 rounded-r-lg">
+              <span className="font-semibold text-navy-600">
+                {nearbyCourses.filter(c => c.type === 'parkland').length} {locale === 'en' ? 'Parkland' : 'Parkland'}
+              </span>
+            </div>
+            <div className="bg-gold-50 border-l-4 border-gold-600 px-4 py-3 rounded-r-lg">
+              <span className="font-semibold text-navy-600">
+                {nearbyCourses.filter(c => c.type === 'championship').length} {locale === 'en' ? 'Championship' : 'Campeonato'}
+              </span>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {nearbyCourses.map((course) => (
               <Link

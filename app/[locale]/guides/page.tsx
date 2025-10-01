@@ -58,6 +58,16 @@ export default function GuidesPage({ params }: { params: { locale: Locale } }) {
       icon: '⛳',
       category: locale === 'en' ? 'Courses' : 'Campos',
     },
+    {
+      title: locale === 'en' ? 'Ireland Golf Courses Comparison Table' : 'Tabla Comparación Campos Golf Irlanda',
+      description:
+        locale === 'en'
+          ? 'Side-by-side comparison of 15+ courses near Adare Manor. Green fees, types, designers, and distances.'
+          : 'Comparación lado a lado de 15+ campos cerca de Adare Manor. Tarifas, tipos, diseñadores y distancias.',
+      href: `/${locale}/guide/ireland-golf-courses-comparison`,
+      icon: '📊',
+      category: locale === 'en' ? 'Courses' : 'Campos',
+    },
   ];
 
   const categories = Array.from(new Set(guides.map((g) => g.category)));
