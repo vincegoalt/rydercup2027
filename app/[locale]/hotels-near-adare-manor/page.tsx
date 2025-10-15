@@ -3,7 +3,7 @@ import { hotels } from '@/data/hotels';
 import HeroBlock from '@/components/blocks/HeroBlock';
 import Image from 'next/image';
 import Link from 'next/link';
-import { generateMetadata as genMeta } from '@/lib/seo';
+import { generateMetadata as genMeta, generateHotelListSchema } from '@/lib/seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
@@ -24,8 +24,25 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 export default function HotelsPage({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
 
+  const hotelListSchema = generateHotelListSchema(
+    hotels.map((hotel) => ({
+      name: hotel.name,
+      description: getLocalizedValue(hotel.description, locale),
+      location: hotel.location,
+      priceRange: hotel.priceRange,
+      rating: hotel.rating,
+      imageUrl: hotel.imageUrl,
+      url: `https://www.adarelimerickgolf.com/${locale}/hotels-near-adare-manor`,
+    }))
+  );
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(hotelListSchema) }}
+      />
+
       <div className="container-custom">
         <Breadcrumbs
           items={[

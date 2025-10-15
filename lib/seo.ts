@@ -225,3 +225,70 @@ export function generateBreadcrumbSchema(items: { name: string; url: string }[])
     })),
   };
 }
+
+export function generateHotelSchema(hotel: {
+  name: string;
+  description?: string;
+  location: string;
+  priceRange?: string;
+  rating?: number;
+  imageUrl?: string;
+  url?: string;
+}) {
+  const schema: any = {
+    '@context': 'https://schema.org',
+    '@type': 'Hotel',
+    name: hotel.name,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: hotel.location,
+      addressCountry: 'IE',
+    },
+  };
+
+  if (hotel.description) {
+    schema.description = hotel.description;
+  }
+
+  if (hotel.priceRange) {
+    schema.priceRange = hotel.priceRange;
+  }
+
+  if (hotel.rating) {
+    schema.starRating = {
+      '@type': 'Rating',
+      ratingValue: hotel.rating,
+      bestRating: '5',
+    };
+  }
+
+  if (hotel.imageUrl) {
+    schema.image = hotel.imageUrl;
+  }
+
+  if (hotel.url) {
+    schema.url = hotel.url;
+  }
+
+  return schema;
+}
+
+export function generateHotelListSchema(hotels: Array<{
+  name: string;
+  description?: string;
+  location: string;
+  priceRange?: string;
+  rating?: number;
+  imageUrl?: string;
+  url?: string;
+}>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: hotels.map((hotel, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: generateHotelSchema(hotel),
+    })),
+  };
+}

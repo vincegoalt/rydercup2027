@@ -90,7 +90,7 @@ export async function POST(request: NextRequest) {
           </body>
         </html>
       `,
-      reply_to: email,
+      replyTo: email,
     });
 
     if (error) {
