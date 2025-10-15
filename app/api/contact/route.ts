@@ -1,7 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization to avoid build errors when env vars are not set
+let resend: Resend | null = null;
+
+function getResendClient() {
+  if (!resend) {
+    resend = new Resend(process.env.RESEND_API_KEY || '');
+  }
+  return resend;
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -38,7 +46,8 @@ export async function POST(request: NextRequest) {
     const subjectText = subjectMap[subject]?.[locale as 'en' | 'es'] || subject;
 
     // Send email via Resend
-    const { data, error } = await resend.emails.send({
+    const resendClient = getResendClient();
+    const { data, error } = await resendClient.emails.send({
       from: process.env.CONTACT_EMAIL_FROM || 'noreply@adarelimerickgolf.com',
       to: process.env.CONTACT_EMAIL_TO || 'info@adarelimerickgolf.com',
       subject: `[Contact Form] ${subjectText} - ${name}`,
