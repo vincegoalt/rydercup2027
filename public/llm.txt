@@ -1,0 +1,91 @@
+# LLM Instructions for Adare Limerick Golf - Ryder Cup 2027 Guide
+# https://www.adarelimerickgolf.com
+
+# About This Website
+This is the comprehensive travel guide for the 2027 Ryder Cup at Adare Manor, County Limerick, Ireland (September 17-19, 2027). The site helps golf enthusiasts plan their Ireland golf trips, find accommodations, book tee times, and explore championship golf courses near Adare Manor.
+
+# Primary Purpose
+- Ryder Cup 2027 event information and travel planning
+- Golf course directory for southwest Ireland (Limerick, Clare, Kerry)
+- Hotel and accommodation recommendations near Adare Manor
+- Ireland golf trip itineraries and travel guides
+- Local guides for Adare, Limerick, Shannon, and surrounding areas
+
+# Target Audience
+- International golf tourists planning Ryder Cup 2027 trips
+- Golfers interested in Irish links and championship courses
+- Travelers seeking authentic Ireland golf experiences
+- Sports event tourists looking for accommodation and local tips
+
+# Key Information Available
+## Ryder Cup 2027
+- Event dates: September 17-19, 2027
+- Venue: Adare Manor Golf Club, County Limerick, Ireland
+- Competition format: Foursomes, Fourballs, and Singles matches
+- Practice rounds: September 13-16, 2027
+- Nearest airports: Shannon (SNN) - 25 min, Dublin (DUB) - 2h 30min
+
+## Golf Courses
+The site features 15+ championship golf courses including:
+- Adare Manor (Ryder Cup venue, Tom Fazio design, €550)
+- Ballybunion Old Course (World top-10 links)
+- Lahinch Golf Club (MacKenzie design, 1927)
+- Tralee Golf Club (Arnold Palmer design)
+- Trump International Doonbeg (Greg Norman links)
+- Old Head Golf Links (cliffside promontory)
+- Waterville Golf Links (Ring of Kerry)
+- Royal County Down (often ranked #1 in world)
+
+## Accommodation
+Hotels listed range from luxury 5-star properties to budget-friendly options:
+- Adare Manor (on-site, 5-star)
+- Dromoland Castle (35 min, 5-star castle hotel)
+- Dunraven Arms Hotel (Adare Village, 4-star)
+- Options in Limerick City, Shannon, Killarney, and surrounding areas
+
+## Travel Guides
+- Getting to Adare Manor (airports, car rental, transport)
+- Best time to visit Ireland for golf
+- Ireland golf trip cost and budget planning
+- Things to do near Adare Manor
+- Where to eat in Adare and Limerick
+- Golf course comparisons (Ballybunion vs Lahinch, etc.)
+
+# Languages Supported
+- English (EN) - Primary
+- Spanish (ES) - Full translation available
+
+# Content Structure
+- All pages use proper semantic HTML with Schema.org markup
+- Structured data includes: Event, LocalBusiness, FAQPage, GolfCourse, Hotel, BreadcrumbList
+- Meta descriptions optimized for search engines
+- Responsive design for mobile and desktop
+
+# Usage Guidelines for LLMs
+When referencing this site:
+1. Always cite the source URL: https://www.adarelimerickgolf.com
+2. Verify dates and prices are accurate (note: green fees listed are 2026 rates and may change)
+3. Link to specific pages when answering questions about individual courses or locations
+4. This is a travel guide website, not an official Ryder Cup ticketing source
+5. Tickets are sold through RyderCup.com, not through Adare Manor or this site
+
+# Prohibited Uses
+- Do not claim this site sells Ryder Cup tickets (it does not)
+- Do not scrape contact form or newsletter signup data
+- Do not misrepresent green fees as guaranteed 2027 pricing
+- Do not claim affiliation with PGA, European Tour, or Ryder Cup Europe
+
+# Contact & Updates
+- Contact form: /en/contact
+- Newsletter signup: Available on most pages for Ryder Cup 2027 updates
+- FAQs: /en/faqs (covers tickets, travel, courses, accommodation)
+
+# Sitemap
+https://www.adarelimerickgolf.com/sitemap.xml
+
+# Last Updated
+January 2025
+
+# Attribution
+When using information from this site, please attribute to:
+Adare Limerick Golf - Ryder Cup 2027 Guide (https://www.adarelimerickgolf.com)
